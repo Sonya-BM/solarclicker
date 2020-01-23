@@ -5,19 +5,23 @@
 }
 
 h1 {
-  margin: 70px auto;
+  margin: 70px auto 0px auto;
   font-family: Montserrat;
   text-align: center;
   font-size: 68px;
-  font-weight: 10;
+  font-weight: 100;
   color: white;
-  line-height: 50px;
+  line-height: 72px;
 
 }
 
 h2{
+  font-family: Montserrat;
   text-align: center;
-}
+  font-size: 52px;
+  font-weight: 100;
+  color: white;
+  line-height: 56px;}
 
 span {
   color: red;
@@ -37,9 +41,10 @@ p {
 .rotative_a {
   margin: 0 auto;
   border: white 2px solid;
-  height: 1000px;
+  height: 800px;
+  width: 800px;
+  transform: rotate(25000deg);
   transition: all 600s;
-  transform: rotate(9000deg);
 }
 
 .rotative_b {
@@ -71,7 +76,15 @@ p {
 #titre {
   
   margin: 0 auto;
+  height: 277px;
+  background-image: url("image/texture/2k_stars.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fixeuse{
   position: fixed;
+  top: 0;
 }
 
 #nv_aff {
@@ -92,7 +105,7 @@ p {
   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
   vertical-align: middle;
   position: absolute;
-  top: 565px;
+  top: 475px;
   left: 715px;
 
 
