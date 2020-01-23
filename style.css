@@ -5,7 +5,7 @@
 }
 
 h1 {
-  margin: 70px auto ;
+  margin: 70px auto;
   font-family: Montserrat;
   text-align: center;
   font-size: 68px;
@@ -13,6 +13,10 @@ h1 {
   color: white;
   line-height: 50px;
 
+}
+
+h2{
+  text-align: center;
 }
 
 span {
@@ -24,13 +28,13 @@ p {
   margin-top: 25px;
 }
 
-.container{
-  width: 1920px!important;
+.container {
+  width: 1920px !important;
   padding: 0;
   margin: 0 auto;
 }
 
-.rotative_a{
+.rotative_a {
   margin: 0 auto;
   border: white 2px solid;
   height: 1000px;
@@ -39,7 +43,7 @@ p {
   transform: rotate(9000deg);
 }
 
-.rotative_b{
+.rotative_b {
   margin: 0 auto;
   border: white 2px solid;
   height: 1000px;
@@ -48,16 +52,17 @@ p {
   transform: rotate(9000deg);
 }
 
-.ancrage{
-  border: 1px solid black;
+.ancrage {
+  background-color: #fff;
   width: 30px;
   height: 100px;
   position: fixed;
-  top:400px;
+  top: 400px;
   right: 0;
 }
 
-.point_blanc{
+.point_blanc {
+  background-color: red;
   margin: 10px auto;
   width: 10px;
   height: 10px;
@@ -65,15 +70,16 @@ p {
   border-radius: 50%;
 }
 
-#titre{
+#titre {
   margin: 0 auto;
+  position: fixed;
 }
 
-#nv_aff{
+#nv_aff {
   color: red;
 }
 
-.jeu{
+.jeu {
   margin: 0 auto;
   width: 100%;
   height: 1000px;
@@ -83,11 +89,11 @@ p {
 
 }
 
-#earth {
+#terre {
   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
   vertical-align: middle;
   position: absolute;
-  top:565px;
+  top: 565px;
   left: 715px;
 
 
@@ -95,7 +101,7 @@ p {
   /* width: 300px;*/
   width: 400px;
   height: 400px;
- 
+
 
   /* [3] Prepare the animation effects */
   transition: transform 200ms linear;
@@ -105,14 +111,15 @@ p {
   /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
   color: #000;
   border-radius: 50%;
-  background: url(image/texture/terre.jpg) 0 0 repeat / 800px;
+  background: url(image/texture/terre.jpg);
+  background-size: 800px;
   box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
 
   /* [5] Position things in a 3d space */
   transform-style: preserve-3d;
 }
 
-#earth:after {
+#terre:after {
   /* [1] Break the flow to show this as an overlay */
   position: absolute;
   top: 0;
@@ -130,7 +137,7 @@ p {
   box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
 }
 
-#earth:before {
+#terre:before {
   /* [1] Again, break the flow to show this as an overlay */
   position: absolute;
   top: 0;
@@ -149,10 +156,10 @@ p {
   background: radial-gradient(circle at 100px 100px, #fff, #000);
 }
 
-#moon {
+#lune {
   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
 
-  
+
   /* [2] Set-up the dimensions and spacing */
   width: 100px;
   height: 100px;
@@ -166,14 +173,15 @@ p {
   /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
   color: #000;
   border-radius: 50%;
-  background: url(image/texture/2k_moon.jpg) 0 0 repeat / 330px;
+  background: url(image/texture/2k_moon.jpg);
+  background-size: 330px;
   box-shadow: inset 5px 0 70px 0px rgba(0, 0, 0, 1);
 
   /* [5] Position things in a 3d space */
   transform-style: preserve-3d;
 }
 
-#moon:after {
+#lune:after {
   /* [1] Break the flow to show this as an overlay */
   position: absolute;
   top: 0;
@@ -191,7 +199,7 @@ p {
   box-shadow: -30px 0px 40px 10px rgba(0, 0, 0, .9) inset;
 }
 
-#moon:before {
+#lune:before {
   /* [1] Again, break the flow to show this as an overlay */
   position: absolute;
   top: 0;
@@ -234,15 +242,15 @@ p {
   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
   vertical-align: middle;
   position: absolute;
-  top:1480px;
+  top: 1480px;
   left: 625px;
-  
+
 
   /* [2] Set-up the dimensions and spacing */
   /* width: 300px;*/
   width: 600px;
   height: 600px;
- 
+
 
   /* [3] Prepare the animation effects */
   transition: transform 200ms linear;
@@ -252,7 +260,8 @@ p {
   /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
   color: #000;
   border-radius: 50%;
-  background: url(image/texture/2k_jupiter.jpg) 0 0 repeat / 1200px;
+  background: url(image/texture/2k_jupiter.jpg);
+  background-size: 1200px;
   box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
 
   /* [5] Position things in a 3d space */
@@ -294,13 +303,13 @@ p {
   opacity: .2;
   border-radius: 50%;
   background: radial-gradient(circle at 100px 100px, #fff, #000);
-  
+
 }
 
 #ceres {
   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
 
-  
+
   /* [2] Set-up the dimensions and spacing */
   width: 50px;
   height: 50px;
@@ -315,7 +324,8 @@ p {
   /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
   color: #000;
   border-radius: 50%;
-  background: url(image/texture/2k_ceres_fictional.jpg) 0 0 repeat / 330px;
+  background: url(image/texture/2k_ceres_fictional.jpg);
+  background-size: 330px;
   box-shadow: inset 2px 0 10px 0px rgba(0, 0, 0, 1);
 
   /* [5] Position things in a 3d space */
@@ -344,8 +354,8 @@ p {
   /* [1] Again, break the flow to show this as an overlay */
   position: absolute;
   top: 0;
-  left: 0;1200
-
+  left: 0;
+  
   /* [2] Again, give it all the available space */
   width: 100%;
   height: 100%;
@@ -379,4 +389,3 @@ p {
     background-position: 500px 0;
   }
 }
-
