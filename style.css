@@ -71,6 +71,7 @@ p {
 }
 
 #titre {
+  
   margin: 0 auto;
   position: fixed;
 }
@@ -217,6 +218,24 @@ p {
   border-radius: 50%;
   background: radial-gradient(circle at 100px 100px, #fff, #000);
 }
+
+.ui{
+
+background-size: cover;
+background-repeat: no-repeat;
+position:fixed;
+width: 100px;
+height: 100px;
+top:250px;
+left: 375px;
+z-index: auto;
+}
+.ui_droite{
+margin-left: 1000px;
+margin-top:60px;
+
+}
+
 
 @keyframes terre_anim {
   0% {
