@@ -266,7 +266,7 @@ position:fixed;
 width: 100px;
 height: 100px;
 top:250px;
-left: 375px;
+left: 330px;
 z-index: auto;
 }
 .ui_droite{
@@ -285,6 +285,17 @@ margin-bottom:230px;
 margin-top:-60px;
 margin-left:200px;
 }
+.propulsion{
+  color:#fff;
+  background-size: cover;
+ background-repeat: no-repeat;
+ position:fixed;
+ z-index: 10000;
+ margin-bottom:230px;
+ margin-top:-75px;
+ margin-left:1100px;
+
+}
 .ui_velocite{
   color:#fff;
  background-size: cover;
@@ -302,7 +313,7 @@ background-repeat: no-repeat;
   z-index: 1000000;
   width: 100px;
 height: 200px;
-top:480px;
+top:390px;
 left:860px;
 }
 @keyframes terre_anim {
@@ -776,6 +787,14 @@ left:860px;
   opacity: .2;
   border-radius: 50%;
   background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+.anneaux{
+background-image: url("image/texture/anneaux_saturne.png");
+position:fixed;
+z-index:auto;
+width: 300px;
+height: 100px;
+top: 100px;
 }
 @keyframes saturne_anim {
   0% {
