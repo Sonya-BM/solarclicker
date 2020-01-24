@@ -16,14 +16,16 @@
   <!-- TITRE DU SITE -->
   <section class="col-12 row" id="titre">
     <div class="fixeuse col-12 row">
-    <h1 class="col-12 ml-auto mr-auto">S<span>O</span>LAR CLICKER <br>
-    </h1>
-    <h2 class="col-12"><p id="nv">LEVEL</p>
-      <p id="nv_aff">&nbsp I</p></h2>
+      <h1 class="col-12 ml-auto mr-auto">S<span>O</span>LAR CLICKER <br>
+      </h1>
+      <h2 class="col-12">
+        <p id="nv">LEVEL</p>
+        <p id="nv_aff">&nbsp I</p>
+      </h2>
     </div>
   </section>
 
-   <!-- SECTION TERRE -->
+  <!-- SECTION TERRE -->
   <section class="jeu" id="boite_terre">
     <div class="rotative_a">
       <div id="lune"></div>
@@ -33,74 +35,83 @@
 
   <!-- SECTION VENUS -->
   <section class="jeu" id="boite_venus">
-                                                          <!-- <div class="rotative_a">
+    <!-- <div class="rotative_a">
                                                             <div id="lune"></div>
                                                           </div> -->
     <div class="col-5" id="venus"></div>
   </section>
 
-    <!-- SECTION MERCURE -->
-    <section class="jeu" id="boite_mercure">
-      
-<div class="col-5" id="mercure"></div>
-</section>
+  <!-- SECTION MERCURE -->
+  <section class="jeu" id="boite_mercure">
+
+    <div class="col-5" id="mercure"></div>
+  </section>
 
   <!-- SECTION MARS -->
 
   <section class="jeu" id="boite_mars">
-   
-<div class="col-5" id="mars"></div>
-</section>
+
+    <div class="col-5" id="mars"></div>
+  </section>
 
   <!-- SECTION JUPITER -->
   <section class="jeu" id="boite_jupiter">
-      <div class="rotative_b">
-       <div id="cees"></div>
-       </div>
+    <div class="rotative_b">
+      <div id="cees"></div>
+    </div>
     <div class="col-5" id="jupiter"></div>
-</section>
+  </section>
 
-    <!-- SECTION SATURNE -->
-    <section class="jeu" id="boite_saturne">
-      <!-- <div class="rotative_a">
+  <!-- SECTION SATURNE -->
+  <section class="jeu" id="boite_saturne">
+    <!-- <div class="rotative_a">
         <div id="lune"></div>
       </div> -->
- <section class="anneaux"></section>     
-<div class="col-5" id="saturne"></div>
-</section>
-
-<!-- SECTION  URANUS-->
-<section class="jeu" id="boite_uranus">
-
-<div class="col-5" id="uranus"></div>
-</section>
-
-<!-- SECTION NEPTUNE -->
-<section class="jeu" id="boite_neptune">
-
-<div class="col-5" id="neptune"></div>
-</section>
-
-<!-- SECTION PLUTON -->
-<section class="jeu" id="boite_pluton">
-
-<div class="col-5" id="pluton"></div>
-</section>
-
-<!--début nouv ajout--> 
-<section class="ui">
-  <img src="image/compteur.png">
-  <p class="ui_score">km/h</p>
-  <img class="ui_droite" id="ui_droite_un" src="image/bouton-trans.png">
-  <p class="propulsion" id="ui_propulsion_seul">Injecter propulsion</p>
-  <img class="ui_droite" id="ui_droite_deux"src="image/bouton-trans.png">
-  <p class="ui_velocite" id="ui_velocite_un">Booster de vélocité</p>
-  <img class="ui_droite" id="ui_droite_trois"src="image/bouton-trans.png">
-  <p class="ui_velocite" id="ui_velocite_deux">Prochaine planète:</p>
-  <img class="ui_fusee" id="ui_droite_quatre" src="image/fusee.png">
+    <section class="anneaux"></section>
+    <div class="col-5" id="saturne"></div>
   </section>
-  
-   
+
+  <!-- SECTION  URANUS-->
+  <section class="jeu" id="boite_uranus">
+
+    <div class="col-5" id="uranus"></div>
+  </section>
+
+  <!-- SECTION NEPTUNE -->
+  <section class="jeu" id="boite_neptune">
+
+    <div class="col-5" id="neptune"></div>
+  </section>
+
+  <!-- SECTION PLUTON -->
+  <section class="jeu" id="boite_pluton">
+
+    <div class="col-5" id="pluton"></div>
+  </section>
+
+  <!--début nouv ajout-->
+  <section class="ui">
+
+    <form action="index.html">
+      <div id="vitesse">0<p id="vitesse_unite">km/h</p>
+      </div>
+      
+      <button type="button" class="style_bouton" id="auto_click" onclick="autoClick()">Injecter propulsion
+      <div id="nombre_actif"></div>
+      <div id="prix_auto_click"></div>
+      <div id="prix_auto_click_suivant"></div>
+      </button>
+
+      <button type="button" class="style_bouton" id="multiplicateur">Booster de vélocité</button>
+      <button type="button" class="style_bouton" id="prochain_niveau">5200km/h</button>
+
+
+      <input type="button" id="fusee" onclick="vitess()" >
+      
+    </form>
+  </section>
+
+
 
   <div class="ancrage">
 
