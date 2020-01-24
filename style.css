@@ -799,27 +799,38 @@ left:860px;
 background-image: url("image/texture/anneaux_saturne.png");
 /*position:fixed;*/
 z-index:2000000;/* passe au premier plan*/
-width: 440px;
+width: 240px;
 height: 80px;
 top: 300px;
+transform: rotate(145deg);
 
+background: none;
+border-radius: 50%;
+-ms-transform: rotate(40deg);  /* IE 9 */
+-webkit-transform: rotate(40deg);  /* Safari */
+transform: rotate(40deg);
+position: absolute;
+left: 45px;
+top: 45px;
+border: 5px solid black;
+}
 
 /* a black shadow from left and white from right */
 /*box-shadow: inset 16px 0 40px 3px rgba(0,0,0,0.9),
   inset -3px 0 5px 2px rgba(255,255,255,0.16);*/
-background-size: 400px;
+/*background-size: 400px;
 margin: 80px auto;
 border-radius: 50%;
 position: relative;
 animation-name: move,scale,rotate;
 animation-duration: 8s,8s,8s;/*augmentation vitesse rotation*/
-animation-iteration-count: infinite,infinite,infinite;
+/*animation-iteration-count: infinite,infinite,infinite;
 animation-timing-function: ease-in-out,linear,linear;
 }
 
 @keyframes move {
 0%   { left: 200px;  }  
-70%  { left: -300px; }
+70%  { left: -200px; }
 100% { left: 200px;  }
 }
 
@@ -846,7 +857,7 @@ animation-timing-function: ease-in-out,linear,linear;
 
   100% {
     background-position: 100px 0;
-  }
+  }*/
 }
 /*Fin anneaux*/
 #uranus {
