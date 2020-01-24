@@ -247,7 +247,36 @@ margin-top:60px;
 
 }
 
-
+.ui_score{
+ color:#fff;
+ background-size: cover;
+background-repeat: no-repeat;
+position:fixed;
+z-index: 10000;
+margin-bottom:230px;
+margin-top:-60px;
+margin-left:200px;
+}
+.ui_velocite{
+  color:#fff;
+ background-size: cover;
+background-repeat: no-repeat;
+position:fixed;
+z-index: 10000;
+margin-bottom:230px;
+margin-top:-75px;
+margin-left:1100px;
+}
+.ui_fusee{
+  background-size: cover;
+background-repeat: no-repeat;
+  position:fixed;
+  z-index: 1000000;
+  width: 100px;
+height: 200px;
+top:480px;
+left:860px;
+}
 @keyframes terre_anim {
   0% {
     background-position: 0 0;
@@ -422,6 +451,7 @@ margin-top:60px;
 
 
 #venus {
+  z-index: 50;
   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
   vertical-align: middle;
   position: absolute;
