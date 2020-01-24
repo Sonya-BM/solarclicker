@@ -76,14 +76,16 @@ p {
 }
 
 .rotative_b {
-  top: -305px;
-  left: 925px;
+  top: 110px;
+  left: 575px;
   position: absolute;
   margin: 0 auto;
   border: white 2px solid;
-  height: 1000px;
-  transition: all 600s;
+  height: 700px!important;
+    width: 700px!important;
   transform: rotate(9000deg);
+  transition: all 600s;
+  
 }
 
 .ancrage {
