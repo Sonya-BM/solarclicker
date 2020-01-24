@@ -275,7 +275,6 @@ margin-top:60px;
 
 }
 
-<<<<<<< HEAD
 .ui_score{
  color:#fff;
  background-size: cover;
@@ -306,8 +305,6 @@ height: 200px;
 top:480px;
 left:860px;
 }
-=======
->>>>>>> 42289f398422f7e683c1c9edf7cc59479677bc1b
 @keyframes terre_anim {
   0% {
     background-position: 0 0;
@@ -867,14 +864,10 @@ left:860px;
   }
 }
 
-<<<<<<< HEAD
 
-#venus {
-  z-index: 50;
-=======
 #neptune {
   margin: 0 auto;
->>>>>>> 42289f398422f7e683c1c9edf7cc59479677bc1b
+
   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
   vertical-align: middle;
   /* position: relative; */
