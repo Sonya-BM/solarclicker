@@ -1,3 +1,4 @@
+ 
 * {
   margin: 0;
   padding: 0;
@@ -69,6 +70,7 @@ p {
   width: 800px;
   transform: rotate(25000deg);
   transition: all 600s;
+  position: absolute;
 }
 
 .rotative_b {
@@ -126,11 +128,12 @@ p {
 }
 
 #terre {
+  display: flex;
+  margin: 0 auto;
   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
   vertical-align: middle;
-  position: absolute;
-  top: 475px;
-  left: 715px;
+  position: relative; 
+  
 
 
   /* [2] Set-up the dimensions and spacing */
@@ -194,7 +197,8 @@ p {
 
 #lune {
   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
-
+  display: flex;
+  position: absolute;
 
   /* [2] Set-up the dimensions and spacing */
   width: 100px;
@@ -271,6 +275,7 @@ margin-top:60px;
 
 }
 
+<<<<<<< HEAD
 .ui_score{
  color:#fff;
  background-size: cover;
@@ -301,6 +306,8 @@ height: 200px;
 top:480px;
 left:860px;
 }
+=======
+>>>>>>> 42289f398422f7e683c1c9edf7cc59479677bc1b
 @keyframes terre_anim {
   0% {
     background-position: 0 0;
@@ -321,73 +328,7 @@ left:860px;
   }
 }
 
-#jupiter {
-  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
-  vertical-align: middle;
-  position: absolute;
-  top: 2480px;
-  left: 625px;
 
-
-  /* [2] Set-up the dimensions and spacing */
-  /* width: 300px;*/
-  width: 600px;
-  height: 600px;
-
-
-  /* [3] Prepare the animation effects */
-  transition: transform 200ms linear;
-  animation: jupi_anim 20s linear infinite;
-  /* This is going to be defined in the next step */
-
-  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
-  color: #000;
-  border-radius: 50%;
-  background: url(image/texture/2k_jupiter.jpg);
-  background-size: 1200px;
-  box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
-
-  /* [5] Position things in a 3d space */
-  transform-style: preserve-3d;
-}
-
-#jupiter:after {
-  /* [1] Break the flow to show this as an overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  /* [2] Make it take all the space available in the box (ahem... globe!) */
-  width: 100%;
-  height: 100%;
-
-  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
-  content: '';
-
-  /* [4] Give it some shape and shadow */
-  border-radius: 50%;
-  box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
-}
-
-#jupiter:before {
-  /* [1] Again, break the flow to show this as an overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  /* [2] Again, give it all the available space */
-  width: 100%;
-  height: 100%;
-
-  /* [3] Duh. */
-  content: '';
-
-  /* [4] Add some shape and overlay effect to it */
-  opacity: .2;
-  border-radius: 50%;
-  background: radial-gradient(circle at 100px 100px, #fff, #000);
-
-}
 
 #ceres {
   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
@@ -452,16 +393,6 @@ left:860px;
   background: radial-gradient(circle at 100px 100px, #fff, #000);
 }
 
-@keyframes jupi_anim {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 1200px 0;
-  }
-}
-
 
 @keyframes ceres_anim {
   0% {
@@ -475,12 +406,12 @@ left:860px;
 
 
 #venus {
-  z-index: 50;
   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
   vertical-align: middle;
-  position: absolute;
+  margin: 0 auto;
+  /* position: absolute;
   top: 1565px;
-  left: 715px;
+  left: 715px; */
 
 
   /* [2] Set-up the dimensions and spacing */
@@ -491,7 +422,7 @@ left:860px;
 
   /* [3] Prepare the animation effects */
   transition: transform 200ms linear;
-  animation: terre_anim 20s linear infinite;
+  animation: venus_anim 20s linear infinite;
   /* This is going to be defined in the next step */
 
   /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
@@ -540,4 +471,557 @@ left:860px;
   opacity: .2;
   border-radius: 50%;
   background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+
+@keyframes venus_anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+#mercure {
+  margin: 0 auto;
+  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+  vertical-align: middle;
+  /* position: relative; */
+  /* top: 475px;
+  left: 715px; */
+
+
+  /* [2] Set-up the dimensions and spacing */
+  /* width: 300px;*/
+  width: 400px;
+  height: 400px;
+
+
+  /* [3] Prepare the animation effects */
+  transition: transform 200ms linear;
+  animation: mercure_anim 20s linear infinite;
+  /* This is going to be defined in the next step */
+
+  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+  color: #000;
+  border-radius: 50%;
+  background: url(image/texture/2k_mercury.jpg);
+  background-size: 800px;
+  box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
+
+  /* [5] Position things in a 3d space */
+  transform-style: preserve-3d;
+}
+
+#mercure:after {
+  /* [1] Break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Make it take all the space available in the box (ahem... globe!) */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+  content: '';
+
+  /* [4] Give it some shape and shadow */
+  border-radius: 50%;
+  box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
+}
+
+#mercure:before {
+  /* [1] Again, break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Again, give it all the available space */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Duh. */
+  content: '';
+
+  /* [4] Add some shape and overlay effect to it */
+  opacity: .2;
+  border-radius: 50%;
+  background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+@keyframes mercure_anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 800px 0;
+  }
+}
+#mars {
+  margin: 0 auto;
+  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+  vertical-align: middle;
+  /* position: relative; */
+  /* top: 475px;
+  left: 715px; */
+
+
+  /* [2] Set-up the dimensions and spacing */
+  /* width: 300px;*/
+  width: 400px;
+  height: 400px;
+
+
+  /* [3] Prepare the animation effects */
+  transition: transform 200ms linear;
+  animation: mars_anim 20s linear infinite;
+  /* This is going to be defined in the next step */
+
+  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+  color: #000;
+  border-radius: 50%;
+  background: url(image/texture/2k_mars.jpg);
+  background-size: 800px;
+  box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
+
+  /* [5] Position things in a 3d space */
+  transform-style: preluneserve-3d;
+}
+
+#mars:after {
+  /* [1] Break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Make it take all the space available in the box (ahem... globe!) */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+  content: '';
+
+  /* [4] Give it some shape and shadow */
+  border-radius: 50%;
+  box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
+}
+
+#mars:before {
+  /* [1] Again, break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Again, give it all the available space */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Duh. */
+  content: '';
+
+  /* [4] Add some shape and overlay effect to it */
+  opacity: .2;
+  border-radius: 50%;
+  background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+@keyframes mars_anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+#jupiter {
+  margin: 0 auto;
+  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+  vertical-align: middle;
+  /* position: relative; */
+  /* top: 475px;
+  left: 715px; */
+
+
+  /* [2] Set-up the dimensions and spacing */
+  /* width: 300px;*/
+  width: 400px;
+  height: 400px;
+
+
+  /* [3] Prepare the animation effects */
+  transition: transform 200ms linear;
+  animation: jupiter_anim 20s linear infinite;
+  /* This is going to be defined in the next step */
+
+  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+  color: #000;
+  border-radius: 50%;
+  background: url(image/texture/2k_jupiter.jpg);
+  background-size: 800px;
+  box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
+
+  /* [5] Position things in a 3d space */
+  transform-style: preserve-3d;
+}
+
+#jupiter:after {
+  /* [1] Break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Make it take all the space available in the box (ahem... globe!) */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+  content: '';
+
+  /* [4] Give it some shape and shadow */
+  border-radius: 50%;
+  box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
+}
+
+#jupiter:before {
+  /* [1] Again, break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Again, give it all the available space */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Duh. */
+  content: '';
+
+  /* [4] Add some shape and overlay effect to it */
+  opacity: .2;
+  border-radius: 50%;
+  background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+@keyframes jupiter_anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+#saturne {
+  margin: 0 auto;
+  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+  vertical-align: middle;
+  /* position: relative; */
+  /* top: 475px;
+  left: 715px; */
+
+
+  /* [2] Set-up the dimensions and spacing */
+  /* width: 300px;*/
+  width: 400px;
+  height: 400px;
+
+
+  /* [3] Prepare the animation effects */
+  transition: transform 200ms linear;
+  animation: saturne_anim 20s linear infinite;
+  /* This is going to be defined in the next step */
+
+  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+  color: #000;
+  border-radius: 50%;
+  background: url(image/texture/2k_saturn.jpg);
+  background-size: 800px;
+  box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
+
+  /* [5] Position things in a 3d space */
+  transform-style: preserve-3d;
+}
+
+#saturne:after {
+  /* [1] Break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Make it take all the space available in the box (ahem... globe!) */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+  content: '';
+
+  /* [4] Give it some shape and shadow */
+  border-radius: 50%;
+  box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
+}
+
+#saturne:before {
+  /* [1] Again, break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Again, give it all the available space */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Duh. */
+  content: '';
+
+  /* [4] Add some shape and overlay effect to it */
+  opacity: .2;
+  border-radius: 50%;
+  background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+@keyframes saturne_anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+#uranus {
+  margin: 0 auto;
+  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+  vertical-align: middle;
+  /* position: relative; */
+  /* top: 475px;
+  left: 715px; */
+
+
+  /* [2] Set-up the dimensions and spacing */
+  /* width: 300px;*/
+  width: 400px;
+  height: 400px;
+
+
+  /* [3] Prepare the animation effects */
+  transition: transform 200ms linear;
+  animation: saturne_anim 20s linear infinite;
+  /* This is going to be defined in the next step */
+
+  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+  color: #000;
+  border-radius: 50%;
+  background: url(image/texture/2k_uranus.jpg);
+  background-size: 800px;
+  box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
+
+  /* [5] Position things in a 3d space */
+  transform-style: preserve-3d;
+}
+
+#uranus:after {
+  /* [1] Break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Make it take all the space available in the box (ahem... globe!) */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+  content: '';
+
+  /* [4] Give it some shape and shadow */
+  border-radius: 50%;
+  box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
+}
+
+#uranus:before {
+  /* [1] Again, break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Again, give it all the available space */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Duh. */
+  content: '';
+
+  /* [4] Add some shape and overlay effect to it */
+  opacity: .2;
+  border-radius: 50%;
+  background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+@keyframes uranus_anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+<<<<<<< HEAD
+
+#venus {
+  z-index: 50;
+=======
+#neptune {
+  margin: 0 auto;
+>>>>>>> 42289f398422f7e683c1c9edf7cc59479677bc1b
+  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+  vertical-align: middle;
+  /* position: relative; */
+  /* top: 475px;
+  left: 715px; */
+
+
+  /* [2] Set-up the dimensions and spacing */
+  /* width: 300px;*/
+  width: 400px;
+  height: 400px;
+
+
+  /* [3] Prepare the animation effects */
+  transition: transform 200ms linear;
+  animation: neptune_anim 20s linear infinite;
+  /* This is going to be defined in the next step */
+
+  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+  color: #000;
+  border-radius: 50%;
+  background: url(image/texture/2k_neptune.jpg);
+  background-size: 800px;
+  box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
+
+  /* [5] Position things in a 3d space */
+  transform-style: preserve-3d;
+}
+
+#neptune:after {
+  /* [1] Break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Make it take all the space available in the box (ahem... globe!) */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+  content: '';
+
+  /* [4] Give it some shape and shadow */
+  border-radius: 50%;
+  box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
+}
+
+#neptune:before {
+  /* [1] Again, break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Again, give it all the available space */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Duh. */
+  content: '';
+
+  /* [4] Add some shape and overlay effect to it */
+  opacity: .2;
+  border-radius: 50%;
+  background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+@keyframes neptune_anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 800px 0;
+  }
+}
+#pluton {
+  margin: 0 auto;
+  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+  vertical-align: middle;
+  /* position: relative; */
+  /* top: 475px;
+  left: 715px; */
+
+
+  /* [2] Set-up the dimensions and spacing */
+  /* width: 300px;*/
+  width: 400px;
+  height: 400px;
+
+
+  /* [3] Prepare the animation effects */
+  transition: transform 200ms linear;
+  animation: pluton_anim 20s linear infinite;
+  /* This is going to be defined in the next step */
+
+  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+  color: #000;
+  border-radius: 50%;
+  background: url(image/texture/2k_pluton.jpg);
+  background-size: 800px;
+  box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
+
+  /* [5] Position things in a 3d space */
+  transform-style: preserve-3d;
+}
+
+#pluton:after {
+  /* [1] Break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Make it take all the space available in the box (ahem... globe!) */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+  content: '';
+
+  /* [4] Give it some shape and shadow */
+  border-radius: 50%;
+  box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
+}
+
+#pluton:before {
+  /* [1] Again, break the flow to show this as an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* [2] Again, give it all the available space */
+  width: 100%;
+  height: 100%;
+
+  /* [3] Duh. */
+  content: '';
+
+  /* [4] Add some shape and overlay effect to it */
+  opacity: .2;
+  border-radius: 50%;
+  background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+@keyframes pluton_anim {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 800px 0;
+  }
 }
