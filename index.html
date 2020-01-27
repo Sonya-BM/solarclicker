@@ -96,16 +96,22 @@
   <section class="ui">
 
     <form action="index.html">
-      <div id="vitesse">0<p id="vitesse_unite">km/h</p>
+      <div id="vitesse">0 km/h
       </div>
 
-      <button type="button" class="style_bouton" id="auto_click" onclick="autoClick()">Injecter propulsion
-        <div id="nombre_actif"></div>
-        <div id="prix_auto_click"></div>
-        <div id="prix_auto_click_suivant"></div>
+      <button type="button" class="style_bouton" id="auto_click" onclick="autoClick()"><p>Injecter propulsion</p>
+        <div  id="nombre_actif">Actif: 0</div>
+        <div class="align" id="prix_auto_click">Prix: 20 km/h</div>
+        <div class="align" id="prix_auto_click_suivant"></div>
       </button>
 
-      <button type="button" class="style_bouton" id="multiplicateur">Booster de vélocité</button>
+      <button type="button" class="style_bouton" id="multiplicateur" onclick="multipli()">
+          <p>Booster de vélocité</p>
+          <div id="nombre_multi_actif">Actif: 0</div>
+          <div class="align" id="prix_multi">Prix: 100 km/h</div>
+          <div class="align" id="prix_multi_suivant"></div>
+        </button>
+
       <button type="button" class="style_bouton" id="prochain_niveau">5200km/h</button>
 
 
