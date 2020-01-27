@@ -6,6 +6,8 @@ var cptAutoClick = 0;
 var cptMultipli = 0;
 var increment = 1;
 
+var prix_venus = 1250;
+
 function vitess() {
     speed = speed + increment;
     document.getElementById('vitesse').innerHTML = speed + 'km/h';
@@ -34,15 +36,10 @@ function multipli(){
         cptMultipli = cptMultipli + 1;
         speed = speed - prixMulti;
         prixMulti = prixMulti * 2;
-
         increment = increment * 1.5;
         console.log(increment);
-
-       
         document.getElementById('vitesse').innerHTML = speed + 'km/h';
-
         document.getElementById('nombre_multi_actif').innerHTML = 'Actif: ' + cptMultipli;
-
         document.getElementById('prix_multi_suivant').innerHTML = 'Prochain : ' + prixMulti + 'km/h';
     }
 }
