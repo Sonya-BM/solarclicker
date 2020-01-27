@@ -16,11 +16,11 @@
   <!-- TITRE DU SITE -->
   <section class="col-12 row" id="titre">
     <div class="fixeuse col-12 row">
-      <h1 class="col-12 ml-auto mr-auto">S<span id="soleil">O</span>LAR CLICKER <br>
+      <h1 class="col-12 ml-auto mr-auto">S<span id="soleil">&nbsp&nbsp</span>LAR CLICKER <br>
       </h1>
       <h2 class="col-12">
         <p id="nv">LEVEL</p>
-        <p id="nv_aff">&nbsp I</p>
+        <p id="nv_aff">I &nbsp</p>
       </h2>
     </div>
   </section>
@@ -35,9 +35,7 @@
 
   <!-- SECTION VENUS -->
   <section class="jeu" id="boite_venus">
-    <!-- <div class="rotative_a">
-                                                            <div id="lune"></div>
-                                                          </div> -->
+  
     <div class="col-5" id="venus"></div>
   </section>
 
@@ -50,24 +48,29 @@
   <!-- SECTION MARS -->
 
   <section class="jeu" id="boite_mars">
-
+    <div class="rotative_phobos">
+      <div id="phobos"></div>
+    </div>
+    <div class="rotative_deimos">
+      <div id="deimos"></div>
+    </div>
     <div class="col-5" id="mars"></div>
   </section>
 
   <!-- SECTION JUPITER -->
   <section class="jeu" id="boite_jupiter">
-      <div class="rotative_b">
-       <div id="ceres"></div>
-       </div>
+    <div class="rotative_b">
+      <div id="ceres"></div>
+    </div>
     <div class="col-5" id="jupiter"></div>
   </section>
 
   <!-- SECTION SATURNE -->
   <section class="jeu" id="boite_saturne">
-    <!-- <div class="rotative_a">
-        <div id="lune"></div>
-      </div> -->
-    <section class="anneaux"></section>
+    
+    
+      <div class="col-5" id="saturne_ann"><img class="anneaux_coup"src="image/texture/testann.png"></div>
+
     <div class="col-5" id="saturne"></div>
   </section>
 
@@ -95,19 +98,19 @@
     <form action="index.html">
       <div id="vitesse">0<p id="vitesse_unite">km/h</p>
       </div>
-      
+
       <button type="button" class="style_bouton" id="auto_click" onclick="autoClick()">Injecter propulsion
-      <div id="nombre_actif"></div>
-      <div id="prix_auto_click"></div>
-      <div id="prix_auto_click_suivant"></div>
+        <div id="nombre_actif"></div>
+        <div id="prix_auto_click"></div>
+        <div id="prix_auto_click_suivant"></div>
       </button>
 
       <button type="button" class="style_bouton" id="multiplicateur">Booster de vélocité</button>
       <button type="button" class="style_bouton" id="prochain_niveau">5200km/h</button>
 
 
-      <input type="button" id="fusee" onclick="vitess()" >
-      
+      <input type="button" id="fusee" onclick="vitess()">
+
     </form>
   </section>
 

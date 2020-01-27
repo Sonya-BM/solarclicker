@@ -3,10 +3,10 @@ var prixAutoClick = 20;
 var cpt = 0;
 var cptAutoClick = 0;
 
-function vitess(){
-speed = speed + 1;
-document.getElementById('vitesse').innerHTML = speed + 'km/h';
-console.log(speed);
+function vitess() {
+    speed = speed + 1;
+    document.getElementById('vitesse').innerHTML = speed + 'km/h';
+    console.log(speed);
 }
 
 function autoClick() {
