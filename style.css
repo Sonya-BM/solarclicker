@@ -256,6 +256,73 @@
    outline: none;
  }
 
+ /* -----------AFFICHEUR------------------ */
+
+#aff_emballage{
+  display: none;
+}
+
+ #affichage{
+   text-align: center;
+   padding: 10px 10px;
+   width: 400px;
+   height: 100px;
+
+   position: fixed;
+   top: 200px;
+   left: 735px;;
+
+   color: white;
+   z-index: 50000;
+   
+   background-color: rgb(160, 0, 0);
+   background-size: cover;
+   -webkit-clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
+clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
+ }
+
+ #fond_affichage{
+  text-align: center;
+  padding: 5px 10px;
+  width: 404px;
+  height: 100px;
+
+  position: fixed;
+  top: 195px;
+  left: 755px;
+  /* 736px */
+
+  color: white;
+  z-index: 50000;
+  
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  
+  animation-duration: 2s;
+  animation-name: affich_slide;
+
+  -webkit-clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
+clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
+ }
+
+ @keyframes affich_slide {
+  from {
+    left:755px 
+  }
+
+  33%{
+    top: 200px;
+  }
+
+  66%{
+    left: 736px;
+  }
+
+  to {
+    left: 755px;
+  }
+}
+
  /* -----------PLANETES------------------ */
 
  .jeu {

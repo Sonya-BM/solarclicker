@@ -1,4 +1,4 @@
-var speed = 100000;
+var speed = 0;
 var prixAutoClick = 20;
 var prixMulti = 100;
 var cpt = 0;
@@ -28,6 +28,12 @@ function autoClick() {
         document.getElementById('prix_auto_click_suivant').innerHTML ='Prochain: ' + prixAutoClick * 2 + 'km/h';
         setInterval(vitess, 1000);
         console.log(speed)
+    }
+
+    else{
+        document.getElementById('aff_emballage').style.display = 'inherit';
+        AnimationEffect
+        // document.getElementById('fond_affichage').style.left = '736px';
     }
 }
 
