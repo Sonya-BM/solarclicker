@@ -11,8 +11,9 @@
    text-align: center;
    font-size: 68px;
    font-weight: 100;
-   color: white;
+   /* color: white; */
    line-height: 72px;
+   text-shadow:0 0 2px #00e92c,0 0 30px #00e92c,0px 0px 5px #00e92c, 0 0 150px #00e92c;color:#00e92c;
 
  }
 
@@ -68,10 +69,11 @@
   color:red;
 }
 
- p {
-   display: inline-block;
-   margin-top: 25px;
- }
+p {
+  font-weight:bold; /*ajout Sonya booster de vélocité*/
+  display: inline-block;
+  margin-top: 25px;
+}
 
  .container {
    width: 1920px !important;
@@ -159,61 +161,75 @@
 /* --------------UI--------------- */
 
 .align{
-  display: inline-block;
+  height:150px;
+  width:300px;/*ajout sonya*/ 
+ display: inline-block;
 }
-
  #auto_click {
-   width: 300px;
-   top: 300px;
-   left: 1400px;
-   padding-bottom: 100px;
+  top: 350px;/*ajout sonya position bouton*/
+  left: 1445px; /*décaler bouton*/
+  padding-bottom: 100px;
+  height:150px;/*ajout sonya*/
+  width:300px;/*ajout sonya 40px*/
  }
-
  #auto_click p{
-   padding-left: 55px;
-   margin: 10px 0 0 0;
+  font-weight:bold;
+  margin-top:25px;/*ajout sonya texte prix: 20km*/
+  padding-left: 0px;/*titre propulsion*/
+  /*margin: 10px 0 0 0;*/
  }
-
  #nombre_actif{
-  font-size: 12px;
-   padding-left: 35px;
+  font-size: 20px; /*sonya ajout 40px*/
+  width:300px;/*sonya ajout width*/
  }
-
 #prix_auto_click, #prix_auto_click_suivant{
-   font-size: 12px;
-   padding-left:0px;
+  font-size: 20px; /*sonya ajout prix=20km/h20px*/
+  padding-left:0px;
+  height:150px;
+  width:300px;/*ajout sonya*/
+  /*margin-top:-200px;/*ajout sonya remonte prix 20km/h*/
  }
-
  #multiplicateur {
-  width: 300px;
-  top: 300px;
+  height:150px;
+  width:300px;/*sonya change 300px*/
+  top: 450px;/*ajout sonya position bouton*/
   left: 1400px;
-   top: 450px;
-   left: 1400px;
-   padding-bottom: 100px;
-
-
+  padding-bottom: 100px;
+margin-top:100px; /*ajout sonya margin*/
+font-size:20px;/*ajout sonya changement size*/
  }
 
+ 
  #prochain_niveau {
-   padding: 0 0 10px 17px;
-   top: 600px;
-   left: 1400px;
+  font-weight:bold;/*km/h requis*/
+  height:150px;
+  width:300px;
+  padding: 0 0 10px 17px;
+  top: 550px;/*ajout sonya position bouton*/
+  left: 1350px; /*décaler bouton*/
+  margin-top:200px;/*sonya ajout margin */
+  font-size:20px;/*ajout sonya changement size*/
  }
 
  .style_bouton {
-   background-color: transparent;
-   border: none;
-   text-align: center;
-   width: 230px;
-   height: 80px;
-   color: #fff;
-   background-image: url(image/bouton-trans.png);
-   background-size: contain;
-   background-repeat: no-repeat;
-   position: fixed;
-   z-index: 10000;
- }
+  /*font-weight:bold;/*tout en blanc*/
+  height:100px;
+  width:300px;
+        text-decoration: none;
+     font-family: 'Monserrat';
+     font-size:20px;/*ajout sonya changement size*/
+      color: white;
+     background: #D30202;
+     transition: 1s;
+   box-shadow:-35px 18px 0px -12px; /*ombre blanche*/
+     transform: skewX(-15deg);/*inclinaisoon bouton*/
+     position: fixed;
+     z-index: 10000;
+}
+.style_bouton:hover {
+transition: 0.5s;
+box-shadow: 10px 10px 0 #FFFFFF;
+}
 
  #vitesse {
    padding-top: 25px;
@@ -323,6 +339,98 @@ clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
   }
 }
 
+.container{
+  /* margin:0px auto; */
+  width: 60px;
+  height: 60px;
+  top: 673px;
+  left: 923px;
+  position: fixed;
+  /* transform-origin:center bottom; */
+  animation-name: flicker;
+  animation-duration:320ms;
+  animation-delay:200ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.flame{
+  /* bottom:0; */
+  position:absolute;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  transform:rotate(136deg) scale(1.5,1.5);
+}
+
+.yellow{
+  left:15px; 
+  width: 30px;
+  height: 30px;
+  background:gold;
+  box-shadow: 0px 0px 9px 4px gold;
+}
+
+.orange{
+  left:10px; 
+  width: 40px;
+  height: 50px;
+  background:orange;
+  box-shadow: 0px 0px 9px 4px orange;
+}
+
+.red{
+  left:5px;
+  width: 50px;
+  height: 50px;
+  background:OrangeRed;
+  box-shadow: 0px 0px 5px 4px OrangeRed;
+}
+
+.white{
+  left:15px; 
+  bottom:5px;
+  width: 30px;
+  height: 30px;
+  background:white;
+  box-shadow: 0px 0px 9px 4px white;
+  
+}
+
+.circle{
+  border-radius: 90%;
+  position:absolute;  
+}
+
+/* .blue{
+  width: 10px;
+  height: 10px;
+  left:25px;
+  bottom:-15px; 
+  background: SlateBlue;
+  box-shadow: 0px 0px 15px 10px SlateBlue;
+} */
+
+.fire{
+  width: 40px;
+  height: 40px;
+  left:10px;
+  bottom:40px;  
+  background:#ED7F10 ;
+  box-shadow: 0px 0px 15px 10px #ED7F10;
+
+}
+
+@keyframes flicker{
+  0%   {transform: rotate(-1deg);}
+  20%  {transform: rotate(1deg);}
+  40%  {transform: rotate(-1deg);}
+  60%  {transform: rotate(1deg) scaleY(1.04);}
+  80%  {transform: rotate(-2deg) scaleY(0.92);}
+  100% {transform: rotate(1deg);}
+}
+
  /* -----------PLANETES------------------ */
 
  .jeu {
@@ -355,7 +463,7 @@ clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
 
    /* [5] Position things in a 3d space */
    transform-style: preserve-3d;
- }
+ 
 
    /* [2] Make it take all the space available in the box (ahem... globe!) */
    width: 100%;
@@ -367,26 +475,9 @@ clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
    /* [4] Give it some shape and shadow */
    border-radius: 50%;
 
+ 
  }
 
- #soleil::before {
-   /* [1] Again, break the flow to show this as an overlay */
-   position: absolute;
-   top: 0;
-   left: 0;
-
-   /* [2] Again, give it all the available space */
-   width: 100%;
-   height: 100%;
-
-   /* [3] Duh. */
-   content: '';
-
-   /* [4] Add some shape and overlay effect to it */
-   opacity: .2;
-   border-radius: 50%;
-   background: radial-gradient(circle at 100px 100px, #fff, #000);
- }
 
 
 
