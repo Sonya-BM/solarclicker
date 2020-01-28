@@ -35,7 +35,7 @@
 
   <!-- SECTION VENUS -->
   <section class="jeu" id="boite_venus">
-  
+
     <div class="col-5" id="venus"></div>
   </section>
 
@@ -67,9 +67,9 @@
 
   <!-- SECTION SATURNE -->
   <section class="jeu" id="boite_saturne">
-    
-    
-      <div class="col-5" id="saturne_ann"><img class="anneaux_coup"src="image/texture/testann.png"></div>
+
+
+    <div class="col-5" id="saturne_ann"><img class="anneaux_coup" src="image/texture/testann.png"></div>
 
     <div class="col-5" id="saturne"></div>
   </section>
@@ -99,20 +99,24 @@
       <div id="vitesse">0 km/h
       </div>
 
-      <button type="button" class="style_bouton" id="auto_click" onclick="autoClick()"><p>Injecter propulsion</p>
-        <div  id="nombre_actif">Actif: 0</div>
+      <button type="button" class="style_bouton" id="auto_click" onclick="autoClick()">
+        <p>Injecter propulsion</p>
+        <div id="nombre_actif">Actif: 0</div>
         <div class="align" id="prix_auto_click">Prix: 20 km/h</div>
         <div class="align" id="prix_auto_click_suivant"></div>
       </button>
 
       <button type="button" class="style_bouton" id="multiplicateur" onclick="multipli()">
-          <p>Booster de vélocité</p>
-          <div id="nombre_multi_actif">Actif: 0</div>
-          <div class="align" id="prix_multi">Prix: 100 km/h</div>
-          <div class="align" id="prix_multi_suivant"></div>
-        </button>
+        <p>Booster de vélocité</p>
+        <div id="nombre_multi_actif">Actif: 0</div>
+        <div class="align" id="prix_multi">Prix: 100 km/h</div>
+        <div class="align" id="prix_multi_suivant"></div>
+      </button>
 
-      <button type="button" class="style_bouton" id="prochain_niveau" onclick="planeteSuivante()"><p id="nom_planete">Venus:</p> <p id="prix_planete">1250 km/h requis</p></button>
+      <button type="button" class="style_bouton" id="prochain_niveau" onclick="planeteSuivante()">
+        <p id="nom_planete">Venus:</p>
+        <p id="prix_planete">1250 km/h requis</p>
+      </button>
 
 
       <input type="button" id="fusee" onclick="vitess()">
@@ -121,11 +125,17 @@
   </section>
 
   <div id="aff_emballage">
-  <div id="fond_affichage"></div>
-  <div id="affichage"><p id="ecrito_a">La vitesse de libération n'est pas atteinte !</p></div>
-</div>
+    <div id="fond_affichage"></div>
+    <div id="affichage">
+      <p id="ecrito_a">La vitesse de libération n'est pas atteinte !</p>
+    </div>
+  </div>
 
   <div class="ancrage">
+
+    <a href="#titre">
+      <div class="point_blanc"></div>
+    </a>
 
     <a href="#boite_terre">
       <div class="point_blanc"></div>
