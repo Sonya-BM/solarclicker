@@ -9,11 +9,6 @@ var planete = 1;
 
 var prixPlanete = 1250;
 
-<<<<<<< HEAD
-=======
-var prix_venus = 1250;
-
->>>>>>> ui
 function vitess() {
     speed = speed + increment;
     document.getElementById('vitesse').innerHTML = speed + 'km/h';
@@ -48,25 +43,10 @@ function multipli(){
         cptMultipli = cptMultipli + 1;
         speed = speed - prixMulti;
         prixMulti = prixMulti * 2;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 7bd70c087629e885263d809a8f2f9cf3840cc868
         increment = increment * 1.5;
         console.log(increment);
         document.getElementById('vitesse').innerHTML = speed + 'km/h';
         document.getElementById('nombre_multi_actif').innerHTML = 'Actif: ' + cptMultipli;
-<<<<<<< HEAD
-
-=======
-        increment = increment * 1.5;
-        console.log(increment);
-        document.getElementById('vitesse').innerHTML = speed + 'km/h';
-        document.getElementById('nombre_multi_actif').innerHTML = 'Actif: ' + cptMultipli;
->>>>>>> ui
-=======
->>>>>>> 7bd70c087629e885263d809a8f2f9cf3840cc868
         document.getElementById('prix_multi_suivant').innerHTML = 'Prochain : ' + prixMulti + 'km/h';
     }
 }
