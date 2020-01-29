@@ -11,9 +11,9 @@
    text-align: center;
    font-size: 68px;
    font-weight: 100;
-   /* color: white; */
    line-height: 72px;
    text-shadow:0 0 2px #00e92c,0 0 30px #00e92c,0px 0px 5px #00e92c, 0 0 150px #00e92c;color:#00e92c;
+   bottom: 0px;
 
  }
 
@@ -33,15 +33,6 @@
    vertical-align: middle;
  }
 
- /* h2::after {
-     margin-left: 20px;
-    margin-bottom: 7px;
-    height:2px;
-    width:265px;
-    background: rgb(255, 255, 255);
-    content:""
-  } */
-
  h2::before,
  h2::after {
    margin-right: 20px;
@@ -59,7 +50,7 @@
  #titre {
    z-index: 500 !important;
    margin: 0 auto;
-   height: 277px;
+   height: 1600px;
    background-image: url("image/texture/2k_stars.jpg");
    background-repeat: no-repeat;
    background-size: cover;
@@ -198,7 +189,6 @@ p {
 margin-top:100px; /*ajout sonya margin*/
 font-size:20px;/*ajout sonya changement size*/
  }
-
  
  #prochain_niveau {
   font-weight:bold;/*km/h requis*/
@@ -230,7 +220,51 @@ font-size:20px;/*ajout sonya changement size*/
 transition: 0.5s;
 box-shadow: 10px 10px 0 #FFFFFF;
 }
-
+/* a.bouton1 {
+  padding: 10px 30px; 
+  background: blue; 
+  color: white; 
+  }
+  a.bouton1:hover {
+  background: red; 
+  } */
+  .block {
+    position: relative;
+    margin: 300px auto 0;
+    width: 500px;
+    height: 250px;
+    background: linear-gradient(0deg, #000, #272727);
+  }
+  
+  .block:before, .block:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+      #0000ff, #00ff00,#ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+  }
+  
+  @keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .block:after {
+    filter: blur(50px);
+  }
  #vitesse {
    padding-top: 25px;
    text-align: center;
@@ -274,33 +308,34 @@ box-shadow: 10px 10px 0 #FFFFFF;
 
  /* -----------AFFICHEUR------------------ */
 
-#aff_emballage{
+ #aff_emballage {
   display: none;
 }
 
- #affichage{
-   text-align: center;
-   padding: 10px 10px;
-   width: 400px;
-   height: 100px;
+#affichage {
+  text-align: center;
+  padding: 10px 10px;
+  width: 400px;
+  height: 100px;
 
-   position: fixed;
-   top: 200px;
-   left: 735px;;
+  position: fixed;
+  top: 200px;
+  left: 735px;
+  ;
 
-   color: white;
-   z-index: 50000;
-   
-   background-color: rgb(160, 0, 0);
-   background-size: cover;
-   -webkit-clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
-clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
- }
+  color: white;
+  z-index: 50000;
 
- #fond_affichage{
+  background-color: rgb(160, 0, 0);
+  background-size: cover;
+  -webkit-clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
+  clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
+}
+
+#fond_affichage {
   text-align: center;
   padding: 5px 10px;
-  width: 404px;
+  width: 400px;
   height: 100px;
 
   position: fixed;
@@ -310,31 +345,47 @@ clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
 
   color: white;
   z-index: 50000;
-  
+
   background-color: rgb(255, 255, 255);
   background-size: cover;
-  
-  animation-duration: 2s;
+
+  animation-duration: 3s;
   animation-name: affich_slide;
+  /* animation-direction:; */
 
   -webkit-clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
-clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
- }
+  clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
+}
 
- @keyframes affich_slide {
+@keyframes affich_slide {
   from {
-    left:755px 
+    top: 195px;
+    left: 755px
   }
 
-  33%{
+  17% {
     top: 200px;
+    left: 755px
   }
 
-  66%{
+  35% {
+    top: 200px;
     left: 736px;
   }
 
+  65% {
+    top: 200px;
+    left: 736px;
+  }
+
+  83% {
+
+    top: 200px;
+    left: 755px
+  }
+
   to {
+    top: 195px;
     left: 755px;
   }
 }
