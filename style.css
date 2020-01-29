@@ -4,9 +4,209 @@
    box-sizing: border-box;
  }
 
+ html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+ overflow: hidden;
+}
+.galaxie {
+	height: 100%;
+	width: 100%;
+	background-image: url("image/texture/2k_stars.jpg");
+	background-size: 2024px 2024;
+}
+.planete {
+	border-radius: 50%;
+	margin-top: 50vh;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	transform: translateY(-50%);
+	float: left;
+	position: relative;
+	cursor: pointer;
+}
+.planete-info {
+	display: none;
+	position: absolute;
+	left: calc(100% + 5px);
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	transform: translateY(-50%);
+	background: black;
+	color: white;
+	padding: 5px;
+	font-weight: 900;
+	z-index: 100;
+	font-family: Helvetica;
+}
+.planete-info:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: calc(50% - 5px);
+	right: 100%;
+	border: 5px solid transparent;
+	border-right-color: black;
+}
+.planete:hover .planete-info {
+	display: block;
+}
+.soleil {
+	/* I had to take large size for sun, so that ratio of every planets were not too small (Mercury was 0.5px) */
+	height: 2000px;
+	width: 2000px;
+	margin-left: -1950px;
+	background: rgb(254, 158, 54);
+	box-shadow: 0 0 100px 50px rgba(218, 58, 7, 0.5), inset -10px 10px rgba(255, 255, 255, 0.1);
+	z-index: 10;
+}
+.mercure {
+	height: 7px;
+	width: 7px;
+	background: rgb(156, 156, 156);
+	box-shadow: inset -3px 0 0.5px rgba(0, 0, 0, 0.8);
+	margin-left: 5%;
+	z-index: 9; /* So that it's planetinfo does not get covered by venus */
+}
+.venus {
+	height: 17.3px;
+	width: 17.3px;
+	background: rgb(171, 101, 34);
+	box-shadow: inset -8px 0 1px rgba(0, 0, 0, 0.8);
+	margin-left: 5%;
+	z-index: 8;
+}
+.terre {
+	height: 18.3px;
+	width: 18.3px;
+	background: rgb(6, 62, 125);
+	box-shadow: inset -9px 0 1.5px rgba(0, 0, 0, 0.8);
+	margin-left: 5%;
+	z-index: 7;
+}
+.mars {
+	height: 10px;
+	width: 10px;
+	background: rgb(212, 76, 3);
+	box-shadow: inset -4px 0 0.5px rgba(0, 0, 0, 0.8);
+	margin-left: 5%;
+	z-index: 6;
+}
+.jupiter {
+  height: 200px;
+  width: 200px;
+  background: -webkit-linear-gradient(rgb(154, 144, 127) 15%, rgb(154, 144, 127) 25%, rgb(156, 156, 155) 27%, rgb(156, 156, 155) 45%, rgb(143, 132, 117) 50%, rgb(181, 161, 129) 60%, rgb(181, 161, 129) 80%, rgb(128, 125, 123) 85%);
+  background: -moz-linear-gradient(rgb(154, 144, 127) 15%, rgb(154, 144, 127) 25%, rgb(156, 156, 155) 27%, rgb(156, 156, 155) 45%, rgb(143, 132, 117) 50%, rgb(181, 161, 129) 60%, rgb(181, 161, 129) 80%, rgb(128, 125, 123) 85%);
+  background: -o-linear-gradient(rgb(154, 144, 127) 15%, rgb(154, 144, 127) 25%, rgb(156, 156, 155) 27%, rgb(156, 156, 155) 45%, rgb(143, 132, 117) 50%, rgb(181, 161, 129) 60%, rgb(181, 161, 129) 80%, rgb(128, 125, 123) 85%);
+  background: linear-gradient(rgb(154, 144, 127) 15%, rgb(154, 144, 127) 25%, rgb(156, 156, 155) 27%, rgb(156, 156, 155) 45%, rgb(143, 132, 117) 50%, rgb(181, 161, 129) 60%, rgb(181, 161, 129) 80%, rgb(128, 125, 123) 85%);
+  box-shadow: inset -75px 0 25px rgba(0, 0, 0, 0.8);
+  margin-left: 6%;
+  z-index: 5;
+}
+.saturne {
+	height: 167.4px;
+	width: 167.4px;
+	/* Saturn has no background since it is created later with rings */
+	/* margin-left should be 55.93px but rings are REALLY big so i added 50px */
+	margin-left: 10%;
+	z-index: 4;
+}
+.uranus {
+	height: 72.8px;
+	width: 72.8px;
+	background: rgb(194, 232, 235);
+	box-shadow: inset -25px 0 9px rgba(0, 0, 0, 0.8);
+	margin-left: 8%;
+	z-index: 3;
+}
+.neptune {
+	height: 70.7px;
+	width: 70.7px;
+	background: rgb(66, 109, 253);
+	box-shadow: inset -25px 0 9px rgba(0, 0, 0, 0.8);
+	margin-left: 8%;
+	z-index: 2;
+}
+.pluton {
+	height: 3.4px;
+	width: 3.4px;
+	background: rgb(239, 199, 160);
+	box-shadow: inset -1px 0 0.5px rgba(0, 0, 0, 0.8);
+	margin-left: 8%;
+	z-index: 1;
+}
+/* Planets' 'accessories' */
+/* Continents on Earth */
+.terre {
+	background-image: url("http://www.clker.com/cliparts/X/O/z/X/W/L/hatra-decupaj.svg");
+	background-size: cover;
+}
+/* Craters on Mars */
+.mars:before, .mars:after {
+	content: "";
+	position: absolute;
+	background: rgba(0, 0, 0, 0.5);
+	display: block;
+	border-radius: 50%;
+	height: 2px;
+	width: 2px;
+}
+.mars:before {
+	top: 2px;
+	left: 2px;
+}
+.mars:after {
+	top: 6px;
+	left: 4px;
+}
+/* Saturn rings */
+.saturne-an {
+	height: 50px;
+	width: 340px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%) rotateZ(-10deg);
+	-moz-transform: translate(-50%, -50%) rotateZ(-10deg);
+	transform: translate(-50%, -50%) rotateZ(-10deg);
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(24,19,25,0) 0%,rgba(53,52,51,0) 34%,rgba(55,54,52,1) 36%,rgba(56,55,53,1) 37%,rgba(68,67,66,1) 38%,rgba(56,55,53,1) 39%,rgba(68,67,66,1) 40%,rgba(56,55,53,1) 41%,rgba(87,77,76,1) 42%,rgba(87,77,76,1) 44%,rgba(113,110,103,1) 46%,rgba(113,110,103,1) 48%,rgba(113,98,93,1) 49%,rgba(113,98,93,1) 51%,rgba(122,115,105,1) 52%,rgba(113,98,93,1) 53%,rgba(113,98,93,1) 54%,rgba(122,115,105,1) 55%,rgba(106,99,89,1) 56%,rgba(106,99,89,1) 58%,rgba(79,76,76,0) 60%,rgba(65,64,70,1) 61%,rgba(65,64,70,1) 62%,rgba(90,85,89,1) 63%,rgba(78,74,73,1) 65%,rgba(78,73,74,1) 67%,rgba(78,73,74,0) 68%,rgba(78,73,75,1) 69%,rgba(78,73,75,1) 70%,rgba(78,73,76,0) 71%,rgba(77,72,76,0) 72%,rgba(24,19,25,0) 100%);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(24,19,25,0) 0%,rgba(53,52,51,0) 34%,rgba(55,54,52,1) 36%,rgba(56,55,53,1) 37%,rgba(68,67,66,1) 38%,rgba(56,55,53,1) 39%,rgba(68,67,66,1) 40%,rgba(56,55,53,1) 41%,rgba(87,77,76,1) 42%,rgba(87,77,76,1) 44%,rgba(113,110,103,1) 46%,rgba(113,110,103,1) 48%,rgba(113,98,93,1) 49%,rgba(113,98,93,1) 51%,rgba(122,115,105,1) 52%,rgba(113,98,93,1) 53%,rgba(113,98,93,1) 54%,rgba(122,115,105,1) 55%,rgba(106,99,89,1) 56%,rgba(106,99,89,1) 58%,rgba(79,76,76,0) 60%,rgba(65,64,70,1) 61%,rgba(65,64,70,1) 62%,rgba(90,85,89,1) 63%,rgba(78,74,73,1) 65%,rgba(78,73,74,1) 67%,rgba(78,73,74,0) 68%,rgba(78,73,75,1) 69%,rgba(78,73,75,1) 70%,rgba(78,73,76,0) 71%,rgba(77,72,76,0) 72%,rgba(24,19,25,0) 100%);
+	background: radial-gradient(ellipse at center, rgba(24,19,25,0) 0%,rgba(53,52,51,0) 34%,rgba(55,54,52,1) 36%,rgba(56,55,53,1) 37%,rgba(68,67,66,1) 38%,rgba(56,55,53,1) 39%,rgba(68,67,66,1) 40%,rgba(56,55,53,1) 41%,rgba(87,77,76,1) 42%,rgba(87,77,76,1) 44%,rgba(113,110,103,1) 46%,rgba(113,110,103,1) 48%,rgba(113,98,93,1) 49%,rgba(113,98,93,1) 51%,rgba(122,115,105,1) 52%,rgba(113,98,93,1) 53%,rgba(113,98,93,1) 54%,rgba(122,115,105,1) 55%,rgba(106,99,89,1) 56%,rgba(106,99,89,1) 58%,rgba(79,76,76,0) 60%,rgba(65,64,70,1) 61%,rgba(65,64,70,1) 62%,rgba(90,85,89,1) 63%,rgba(78,74,73,1) 65%,rgba(78,73,74,1) 67%,rgba(78,73,74,0) 68%,rgba(78,73,75,1) 69%,rgba(78,73,75,1) 70%,rgba(78,73,76,0) 71%,rgba(77,72,76,0) 72%,rgba(24,19,25,0) 100%);
+}
+.saturne-haut, .saturne-bas {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background: -webkit-linear-gradient(rgb(95, 88, 79) 5%, rgb(144, 129, 101) 6%, rgb(144, 129, 101) 15%, rgb(213, 184, 133) 20%, rgb(210, 175, 119) 25%, rgb(210, 175, 119) 45%, rgb(254, 208, 133) 50%, rgb(254, 208, 133) 75%, rgb(149, 136, 114) 85%);
+	background: -moz-linear-gradient(rgb(95, 88, 79) 5%, rgb(144, 129, 101) 6%, rgb(144, 129, 101) 15%, rgb(213, 184, 133) 20%, rgb(210, 175, 119) 25%, rgb(210, 175, 119) 45%, rgb(254, 208, 133) 50%, rgb(254, 208, 133) 75%, rgb(149, 136, 114) 85%);
+	background: -o-linear-gradient(rgb(95, 88, 79) 5%, rgb(144, 129, 101) 6%, rgb(144, 129, 101) 15%, rgb(213, 184, 133) 20%, rgb(210, 175, 119) 25%, rgb(210, 175, 119) 45%, rgb(254, 208, 133) 50%, rgb(254, 208, 133) 75%, rgb(149, 136, 114) 85%);
+	background: linear-gradient(rgb(95, 88, 79) 5%, rgb(144, 129, 101) 6%, rgb(144, 129, 101) 15%, rgb(213, 184, 133) 20%, rgb(210, 175, 119) 25%, rgb(210, 175, 119) 45%, rgb(254, 208, 133) 50%, rgb(254, 208, 133) 75%, rgb(149, 136, 114) 85%);
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	-webkit-transform: rotateZ(-10deg);
+	-moz-transform: rotateZ(-10deg);
+	transform: rotateZ(-10deg);
+	box-shadow: inset -60px 0 20px rgba(0, 0, 0, 0.8);
+}
+.saturne-haut {
+	/* There is line between parts of saturn in safari and firefox :*/
+	clip: rect(0px, 167px, 83.5px, 0px);
+}
+.saturne-bas {
+	clip: rect(83.5px, 167px, 167px, 0px);
+}
+
+ /* html {
+   overflow-y: hidden;
+ } */
+
  h1 {
    letter-spacing: 20px;
    margin: 70px auto 0px auto;
+   height: 200px;
    font-family: Montserrat;
    text-align: center;
    font-size: 68px;
@@ -17,13 +217,15 @@
  }
 
  h2 {
+   position: fixed !important;
+   top: 150px;
    font-family: Montserrat;
    text-align: center;
    font-size: 52px;
    font-weight: 100;
    color: white;
    line-height: 56px;
-   }
+ }
 
  h2,
  h2::before,
@@ -49,22 +251,23 @@
  #titre {
    z-index: 500 !important;
    margin: 0 auto;
-   height: 1600px;
+   height: 950px;
    background-image: url("image/texture/2k_stars.jpg");
    background-repeat: no-repeat;
    background-size: cover;
  }
 
-#nv_aff{
-  color:red;
-}
+ #nv_aff {
+   color: red;
+ }
 
- 
-p {
-  font-weight:bold; /*ajout Sonya booster de vélocité*/
-  display: inline-block;
-  margin-top: 25px;
-}
+
+ p {
+   font-weight: bold;
+   /*ajout Sonya booster de vélocité*/
+   display: inline-block;
+   margin-top: 25px;
+ }
 
  .container {
    width: 1920px !important;
@@ -73,66 +276,83 @@ p {
  }
 
  .rotative_a {
-   top: 312px;
+   top: 980px;
    left: 503px;
    margin: 0 auto;
-   /* border: white 2px solid; */
+   /* border: white 2px solid;  */
    height: 900px;
    width: 900px;
-   transform: rotate(25000deg);
-   transition: all 600s;
+   animation: rotate 15s linear infinite;
+  animation-name: rotate_lune;
    position: absolute;
  }
 
+ @keyframes rotate_lune {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
  .rotative_b {
-   top: 4410px;
+   top: 5085px;
+   left: 605px;
+   position: absolute;
+   margin: 0 auto;
+   /* border: white 2px solid!important; */
+   height: 700px !important;
+   width: 700px !important;
+   animation: rotate 30s linear infinite;
+  animation-name: rotate_ceres;
+ }
+
+ @keyframes rotate_ceres {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+ .rotative_deimos {
+   top: 4086px;
    left: 600px;
    position: absolute;
    margin: 0 auto;
    /* border: white 2px solid!important; */
    height: 700px !important;
    width: 700px !important;
-   transform: rotate(9000deg);
-   transition: all 600s;
+   animation: rotate 8s linear infinite;
+  animation-name: rotate_deimos;
  }
 
- .rotative_deimos {
-  top: 4410px;
-  left: 600px;
-  position: absolute;
-  margin: 0 auto;
-  /* border: white 2px solid!important; */
-  height: 700px !important;
-  width: 700px !important;
-  transform: rotate(9000deg);
-  transition: all 400s;
+ @keyframes rotate_deimos {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.rotative_phobos {
-  top: 3460px;
-  left: 650px;
-  position: absolute;
-  margin: 0 auto;
-  /* border: white 2px solid!important; */
-  height: 600px !important;
-  width: 600px !important;
-  transform: rotate(9000deg);
-  transition: all 220s;
+ .rotative_phobos {
+   top: 4139px;
+   left: 650px;
+   position: absolute;
+   margin: 0 auto;
+   /* border: white 2px solid!important; */
+   height: 600px !important;
+   width: 600px !important;
+   animation: rotate 4s linear infinite;
+  animation-name: rotate_phobos;
+ }
+
+ @keyframes rotate_phobos {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.rotative_deimos {
-  top: 3410px;
-  left: 602px;
-  position: absolute;
-  margin: 0 auto;
-  /* border: white 2px solid!important; */
-  height: 700px !important;
-  width: 700px !important;
-  /* transform: rotate(9000deg);
-  transition: all 600s; */
-}
+ .fixeuse {
+   height: 0px;
+ }
 
  .ancrage {
+   display: none;
    background-color: #fff;
    width: 30px;
 
@@ -149,85 +369,165 @@ p {
    border: 1px solid black;
    border-radius: 50%;
  }
-/* --------------UI--------------- */
 
-.align{
-  height:150px;
-  width:300px;/*ajout sonya*/ 
- display: inline-block;
-}
+ /* --------------UI--------------- */
 
-/* #ui{
-display: none;
-} */
+ .align {
+   height: 150px;
+   width: 300px;
+   /*ajout sonya*/
+   display: inline-block;
+ }
+
+ #ui {
+   display: none;
+ }
 
  #auto_click {
-  top: 350px;/*ajout sonya position bouton*/
-  left: 1445px; /*décaler bouton*/
-  padding-bottom: 100px;
-  height:150px;/*ajout sonya*/
-  width:300px;/*ajout sonya 40px*/
+   outline: none;
+   top: 350px;
+   /*ajout sonya position bouton*/
+   left: 1445px;
+   /*décaler bouton*/
+   padding-bottom: 100px;
+   height: 150px;
+   /*ajout sonya*/
+   width: 300px;
+   /*ajout sonya 40px*/
  }
- #auto_click p{
-  font-weight:bold;
-  margin-top:25px;/*ajout sonya texte prix: 20km*/
-  padding-left: 0px;/*titre propulsion*/
-  /*margin: 10px 0 0 0;*/
+
+ #auto_click p {
+   font-weight: bold;
+   margin-top: 25px;
+   /*ajout sonya texte prix: 20km*/
+   padding-left: 0px;
+   /*titre propulsion*/
+   /*margin: 10px 0 0 0;*/
  }
- #nombre_actif{
-  font-size: 20px; /*sonya ajout 40px*/
-  width:300px;/*sonya ajout width*/
+
+ #nombre_actif {
+   font-size: 20px;
+   /*sonya ajout 40px*/
+   width: 300px;
+   /*sonya ajout width*/
  }
-#prix_auto_click, #prix_auto_click_suivant{
-  font-size: 20px; /*sonya ajout prix=20km/h20px*/
-  padding-left:0px;
-  height:150px;
-  width:300px;/*ajout sonya*/
-  /*margin-top:-200px;/*ajout sonya remonte prix 20km/h*/
+
+ #prix_auto_click,
+ #prix_auto_click_suivant {
+   font-size: 20px;
+   /*sonya ajout prix=20km/h20px*/
+   padding-left: 0px;
+   height: 150px;
+   width: 300px;
+   /*ajout sonya*/
+   /*margin-top:-200px;/*ajout sonya remonte prix 20km/h*/
  }
+
  #multiplicateur {
-  height:150px;
-  width:300px;/*sonya change 300px*/
-  top: 450px;/*ajout sonya position bouton*/
-  left: 1400px;
-  padding-bottom: 100px;
-margin-top:100px; /*ajout sonya margin*/
-font-size:20px;/*ajout sonya changement size*/
+   outline: none;
+   height: 150px;
+   width: 300px;
+   /*sonya change 300px*/
+   top: 450px;
+   /*ajout sonya position bouton*/
+   left: 1400px;
+   padding-bottom: 100px;
+   margin-top: 100px;
+   /*ajout sonya margin*/
+   font-size: 20px;
+   /*ajout sonya changement size*/
 
  }
- 
+
  #prochain_niveau {
-  font-weight:bold;/*km/h requis*/
-  height:150px;
-  width:300px;
-  padding: 0 0 10px 17px;
-  top: 550px;/*ajout sonya position bouton*/
-  left: 1350px; /*décaler bouton*/
-  margin-top:200px;/*sonya ajout margin */
-  font-size:20px;/*ajout sonya changement size*/
+   outline: none;
+   font-weight: bold;
+   /*km/h requis*/
+   height: 150px;
+   width: 300px;
+   padding: 0 0 10px 17px;
+   top: 550px;
+   /*ajout sonya position bouton*/
+   left: 1350px;
+   /*décaler bouton*/
+   margin-top: 200px;
+   /*sonya ajout margin */
+   font-size: 20px;
+   /*ajout sonya changement size*/
  }
 
  .style_bouton {
-    /*font-weight:bold;/*tout en blanc*/
-    height:100px;
-    width:300px;
-          text-decoration: none;
-       font-family: 'Monserrat';
-       font-size:20px;/*ajout sonya changement size*/
-        color: white;
-       background: #D30202;
-       transition: 1s;
-     box-shadow:-35px 18px 0px -12px; /*ombre blanche*/
-       transform: skewX(-15deg);/*inclinaisoon bouton*/
-       position: fixed;
-       z-index: 10000;
+   /*font-weight:bold;/*tout en blanc*/
+   height: 100px;
+   width: 300px;
+   text-decoration: none;
+   font-family: 'Monserrat';
+   font-size: 20px;
+   /*ajout sonya changement size*/
+   color: white;
+   background: #D30202;
+   transition: 1s;
+   box-shadow: -35px 18px 0px -12px;
+   /*ombre blanche*/
+   transform: skewX(-15deg);
+   /*inclinaisoon bouton*/
+   position: fixed;
+   z-index: 10000;
  }
+
  .style_bouton:hover {
-  transition: 0.5s;
-  box-shadow: 10px 10px 0 #FFFFFF;
-  
-}
+   transition: 0.5s;
+   box-shadow: 10px 10px 0 #FFFFFF;
+ }
+
+
+ @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300';
+
+ * {
+   font-family: 'Source Sans Pro', sans-serif;
+   box-sizing: border-box;
+   font-weight: 300;
+   padding: 0;
+   margin: 0;
+ }
+
+ .btn-wrapper {
+  z-index: 100;
+  position: absolute;
+  top: calc(70% - 0px);
+   left: 0;
+   width: 100%;
+   text-align: center;
+ }
+
+ .btn {
+   box-shadow: none;
+   appearance: none;
+   border: 0;
+   outline: 0;
+   background-color: #D30202;
+   height: 95px;
+   padding: 0 30px;
+   font-size: 50px;
+   border-radius: 50px;
+   color: #fff;
+   cursor: pointer;
+   transition: all .4s;
+   transition-timing-function: cubic-bezier(.2, 3, .4, 1);
+   user-select: none;
+
+   &:hover {
+     transform: scale(1.1, 1.1);
+   }
+
+   &:active {
+     transform: scale(1.05, 1.05);
+   }
+ }
+
+
  #vitesse {
+   outline: none;
    padding-top: 25px;
    text-align: center;
    width: 200px;
@@ -243,6 +543,7 @@ font-size:20px;/*ajout sonya changement size*/
  }
 
  .ui_velocite {
+   outline: none;
    color: #fff;
    background-size: cover;
    background-repeat: no-repeat;
@@ -270,7 +571,7 @@ font-size:20px;/*ajout sonya changement size*/
 
  /* -----------AFFICHEUR------------------ */
 
-#aff_emballage {
+ #aff_emballage {
    display: none;
  }
 
@@ -352,71 +653,71 @@ font-size:20px;/*ajout sonya changement size*/
    }
  }
 
-.container{
-  /* margin:0px auto; */
-  width: 60px;
-  height: 60px;
-  top: 673px;
-  left: 923px;
-  position: fixed;
-  /* transform-origin:center bottom; */
-  animation-name: flicker;
-  animation-duration:320ms;
-  animation-delay:200ms;
-  animation-timing-function: ease-in;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
+ .container {
+   /* margin:0px auto; */
+   width: 60px;
+   height: 60px;
+   top: 673px;
+   left: 923px;
+   position: fixed;
+   /* transform-origin:center bottom; */
+   animation-name: flicker;
+   animation-duration: 320ms;
+   animation-delay: 200ms;
+   animation-timing-function: ease-in;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+ }
 
-.flame{
-  /* bottom:0; */
-  position:absolute;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-top-left-radius: 50%;
-  transform:rotate(136deg) scale(1.5,1.5);
-}
+ .flame {
+   /* bottom:0; */
+   position: absolute;
+   border-bottom-right-radius: 50%;
+   border-bottom-left-radius: 50%;
+   border-top-left-radius: 50%;
+   transform: rotate(136deg) scale(1.5, 1.5);
+ }
 
-.yellow{
-  left:15px; 
-  width: 30px;
-  height: 30px;
-  background:gold;
-  box-shadow: 0px 0px 9px 4px gold;
-}
+ .yellow {
+   left: 15px;
+   width: 30px;
+   height: 30px;
+   background: gold;
+   box-shadow: 0px 0px 9px 4px gold;
+ }
 
-.orange{
-  left:10px; 
-  width: 40px;
-  height: 50px;
-  background:orange;
-  box-shadow: 0px 0px 9px 4px orange;
-}
+ .orange {
+   left: 10px;
+   width: 40px;
+   height: 50px;
+   background: orange;
+   box-shadow: 0px 0px 9px 4px orange;
+ }
 
-.red{
-  left:5px;
-  width: 50px;
-  height: 50px;
-  background:OrangeRed;
-  box-shadow: 0px 0px 5px 4px OrangeRed;
-}
+ .red {
+   left: 5px;
+   width: 50px;
+   height: 50px;
+   background: OrangeRed;
+   box-shadow: 0px 0px 5px 4px OrangeRed;
+ }
 
-.white{
-  left:15px; 
-  bottom:5px;
-  width: 30px;
-  height: 30px;
-  background:white;
-  box-shadow: 0px 0px 9px 4px white;
-  
-}
+ .white {
+   left: 15px;
+   bottom: 5px;
+   width: 30px;
+   height: 30px;
+   background: white;
+   box-shadow: 0px 0px 9px 4px white;
 
-.circle{
-  border-radius: 90%;
-  position:absolute;  
-}
+ }
 
-/* .blue{
+ .circle {
+   border-radius: 90%;
+   position: absolute;
+ }
+
+ /* .blue{
   width: 10px;
   height: 10px;
   left:25px;
@@ -425,24 +726,41 @@ font-size:20px;/*ajout sonya changement size*/
   box-shadow: 0px 0px 15px 10px SlateBlue;
 } */
 
-.fire{
-  width: 40px;
-  height: 40px;
-  left:10px;
-  bottom:40px;  
-  background:#ED7F10 ;
-  box-shadow: 0px 0px 15px 10px #ED7F10;
+ .fire {
+   width: 40px;
+   height: 40px;
+   left: 10px;
+   bottom: 40px;
+   background: #ED7F10;
+   box-shadow: 0px 0px 15px 10px #ED7F10;
 
-}
+ }
 
-@keyframes flicker{
-  0%   {transform: rotate(-1deg);}
-  20%  {transform: rotate(1deg);}
-  40%  {transform: rotate(-1deg);}
-  60%  {transform: rotate(1deg) scaleY(1.04);}
-  80%  {transform: rotate(-2deg) scaleY(0.92);}
-  100% {transform: rotate(1deg);}
-}
+ @keyframes flicker {
+   0% {
+     transform: rotate(-1deg);
+   }
+
+   20% {
+     transform: rotate(1deg);
+   }
+
+   40% {
+     transform: rotate(-1deg);
+   }
+
+   60% {
+     transform: rotate(1deg) scaleY(1.04);
+   }
+
+   80% {
+     transform: rotate(-2deg) scaleY(0.92);
+   }
+
+   100% {
+     transform: rotate(1deg);
+   }
+ }
 
  /* -----------PLANETES------------------ */
 
@@ -476,7 +794,7 @@ font-size:20px;/*ajout sonya changement size*/
 
    /* [5] Position things in a 3d space */
    transform-style: preserve-3d;
- 
+
 
    /* [2] Make it take all the space available in the box (ahem... globe!) */
    width: 100%;
@@ -488,7 +806,7 @@ font-size:20px;/*ajout sonya changement size*/
    /* [4] Give it some shape and shadow */
    border-radius: 50%;
 
- 
+
  }
 
 
@@ -505,60 +823,60 @@ font-size:20px;/*ajout sonya changement size*/
  }
 
  #terre {
-  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
-  vertical-align: middle;
-  margin: 0 auto;
+   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+   vertical-align: middle;
+   margin: 0 auto;
 
-  /* [2] Set-up the dimensions and spacing */
-  width: 400px;
-  height: 400px;
+   /* [2] Set-up the dimensions and spacing */
+   width: 400px;
+   height: 400px;
 
-  /* [3] Prepare the animation effects */
-  transition: transform 200ms linear;
-  animation: venus_anim 20s linear infinite;
-  /* This is going to be defined in the next step */
+   /* [3] Prepare the animation effects */
+   transition: transform 200ms linear;
+   animation: venus_anim 20s linear infinite;
+   /* This is going to be defined in the next step */
 
-  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
-  color: #000;
-  border-radius: 50%;
-  background: url(image/texture/terre.jpg);
-  background-size: 800px;
-  box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
+   /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+   color: #000;
+   border-radius: 50%;
+   background: url(image/texture/terre.jpg);
+   background-size: 800px;
+   box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
 
-  /* [5] Position things in a 3d space */
-  transform-style: preserve-3d;
-}
+   /* [5] Position things in a 3d space */
+   transform-style: preserve-3d;
+ }
 
-#terre::after {
-  /* [1] Break the flow to show this as an overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
+ #terre::after {
+   /* [1] Break the flow to show this as an overlay */
+   position: absolute;
+   top: 0;
+   left: 0;
 
-  /* [2] Make it take all the space available in the box (ahem... globe!) */
-  width: 100%;
-  height: 100%;
+   /* [2] Make it take all the space available in the box (ahem... globe!) */
+   width: 100%;
+   height: 100%;
 
-  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
-  content: '';
+   /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+   content: '';
 
-  /* [4] Give it some shape and shadow */
-  border-radius: 50%;
-  box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
-}
+   /* [4] Give it some shape and shadow */
+   border-radius: 50%;
+   box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
+ }
 
-#terre::before {
-  /* [1] Again, break the flow to show this as an overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
+ #terre::before {
+   /* [1] Again, break the flow to show this as an overlay */
+   position: absolute;
+   top: 0;
+   left: 0;
 
-  /* [2] Again, give it all the available space */
-  width: 100%;
-  height: 100%;
+   /* [2] Again, give it all the available space */
+   width: 100%;
+   height: 100%;
 
-  /* [3] Duh. */
-  content: '';
+   /* [3] Duh. */
+   content: '';
 
    /* [4] Add some shape and overlay effect to it */
    opacity: .2;
@@ -728,7 +1046,7 @@ font-size:20px;/*ajout sonya changement size*/
    margin: 0 auto;
    /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
    vertical-align: middle;
- 
+
    /* [2] Set-up the dimensions and spacing */
    /* width: 300px;*/
    width: 400px;
@@ -862,149 +1180,149 @@ font-size:20px;/*ajout sonya changement size*/
  }
 
  #deimos {
-  position: absolute;
-  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+   position: absolute;
+   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
 
-  /* [2] Set-up the dimensions and spacing */
-  width: 35px;
-  height: 50px;
-  margin: 3em auto;
+   /* [2] Set-up the dimensions and spacing */
+   width: 35px;
+   height: 50px;
+   margin: 3em auto;
 
-  /* [3] Prepare the animation effects */
-  transition: transform 200ms linear;
-  animation: deimos_anim 60s linear infinite;
-  /* This is going to be defined in the next step */
+   /* [3] Prepare the animation effects */
+   transition: transform 200ms linear;
+   animation: deimos_anim 60s linear infinite;
+   /* This is going to be defined in the next step */
 
-  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
-  color: #000;
-  border-radius: 50%;
-  background: url(image/texture/2k_haumea_fictional.jpg);
-  background-size: 330px;
-  box-shadow: inset 2px 0 10px 0px rgba(0, 0, 0, 1);
+   /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+   color: #000;
+   border-radius: 50%;
+   background: url(image/texture/2k_haumea_fictional.jpg);
+   background-size: 330px;
+   box-shadow: inset 2px 0 10px 0px rgba(0, 0, 0, 1);
 
-  /* [5] Position things in a 3d space */
-  transform-style: preserve-3d;
-}
+   /* [5] Position things in a 3d space */
+   transform-style: preserve-3d;
+ }
 
-#deimos::after {
-  /* [1] Break the flow to show this as an overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
+ #deimos::after {
+   /* [1] Break the flow to show this as an overlay */
+   position: absolute;
+   top: 0;
+   left: 0;
 
-  /* [2] Make it take all the space available in the box (ahem... globe!) */
-  width: 100%;
-  height: 100%;
+   /* [2] Make it take all the space available in the box (ahem... globe!) */
+   width: 100%;
+   height: 100%;
 
-  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
-  content: '';
+   /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+   content: '';
 
-  /* [4] Give it some shape and shadow */
-  border-radius: 50%;
-  box-shadow: -10px 0px 10px 1px rgba(0, 0, 0, .9) inset;
-}
+   /* [4] Give it some shape and shadow */
+   border-radius: 50%;
+   box-shadow: -10px 0px 10px 1px rgba(0, 0, 0, .9) inset;
+ }
 
-#deimos::before {
-  /* [1] Again, break the flow to show this as an overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
+ #deimos::before {
+   /* [1] Again, break the flow to show this as an overlay */
+   position: absolute;
+   top: 0;
+   left: 0;
 
-  /* [2] Again, give it all the available space */
-  width: 100%;
-  height: 100%;
+   /* [2] Again, give it all the available space */
+   width: 100%;
+   height: 100%;
 
-  /* [3] Duh. */
-  content: '';
+   /* [3] Duh. */
+   content: '';
 
-  /* [4] Add some shape and overlay effect to it */
-  opacity: .2;
-  border-radius: 50%;
-  background: radial-gradient(circle at 100px 100px, #fff, #000);
-}
+   /* [4] Add some shape and overlay effect to it */
+   opacity: .2;
+   border-radius: 50%;
+   background: radial-gradient(circle at 100px 100px, #fff, #000);
+ }
 
-#phobos {
-  position: absolute;
-  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+ #phobos {
+   position: absolute;
+   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
 
-  /* [2] Set-up the dimensions and spacing */
-  width: 50px;
-  height: 75px;
-  margin: 3em auto;
+   /* [2] Set-up the dimensions and spacing */
+   width: 50px;
+   height: 75px;
+   margin: 3em auto;
 
-  /* [3] Prepare the animation effects */
-  transition: transform 200ms linear;
-  animation: phobos_anim 60s linear infinite;
-  /* This is going to be defined in the next step */
+   /* [3] Prepare the animation effects */
+   transition: transform 200ms linear;
+   animation: phobos_anim 60s linear infinite;
+   /* This is going to be defined in the next step */
 
-  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
-  color: #000;
-  border-radius: 50%;
-  background: url(image/texture/2k_ceres_fictional.jpg);
-  background-size: 330px;
-  box-shadow: inset 2px 0 10px 0px rgba(0, 0, 0, 1);
+   /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+   color: #000;
+   border-radius: 50%;
+   background: url(image/texture/2k_ceres_fictional.jpg);
+   background-size: 330px;
+   box-shadow: inset 2px 0 10px 0px rgba(0, 0, 0, 1);
 
-  /* [5] Position things in a 3d space */
-  transform-style: preserve-3d;
-}
+   /* [5] Position things in a 3d space */
+   transform-style: preserve-3d;
+ }
 
-#phobos::after {
-  /* [1] Break the flow to show this as an overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
+ #phobos::after {
+   /* [1] Break the flow to show this as an overlay */
+   position: absolute;
+   top: 0;
+   left: 0;
 
-  /* [2] Make it take all the space available in the box (ahem... globe!) */
-  width: 100%;
-  height: 100%;
+   /* [2] Make it take all the space available in the box (ahem... globe!) */
+   width: 100%;
+   height: 100%;
 
-  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
-  content: '';
+   /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+   content: '';
 
-  /* [4] Give it some shape and shadow */
-  border-radius: 50%;
-  box-shadow: -10px 0px 10px 1px rgba(0, 0, 0, .9) inset;
-}
+   /* [4] Give it some shape and shadow */
+   border-radius: 50%;
+   box-shadow: -10px 0px 10px 1px rgba(0, 0, 0, .9) inset;
+ }
 
-#phobos::before {
-  /* [1] Again, break the flow to show this as an overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
+ #phobos::before {
+   /* [1] Again, break the flow to show this as an overlay */
+   position: absolute;
+   top: 0;
+   left: 0;
 
-  /* [2] Again, give it all the available space */
-  width: 100%;
-  height: 100%;
+   /* [2] Again, give it all the available space */
+   width: 100%;
+   height: 100%;
 
-  /* [3] Duh. */
-  content: '';
+   /* [3] Duh. */
+   content: '';
 
-  /* [4] Add some shape and overlay effect to it */
-  opacity: .2;
-  border-radius: 50%;
-  background: radial-gradient(circle at 100px 100px, #fff, #000);
-}
+   /* [4] Add some shape and overlay effect to it */
+   opacity: .2;
+   border-radius: 50%;
+   background: radial-gradient(circle at 100px 100px, #fff, #000);
+ }
 
 
-@keyframes phobos_anim {
-  0% {
-    background-position: 0 0;
-  }
+ @keyframes phobos_anim {
+   0% {
+     background-position: 0 0;
+   }
 
-  100% {
-    background-position: 500px 0;
-  }
-}
+   100% {
+     background-position: 500px 0;
+   }
+ }
 
-@keyframes deimos_anim {
-  0% {
-    background-position: 0 0;
-  }
+ @keyframes deimos_anim {
+   0% {
+     background-position: 0 0;
+   }
 
-  100% {
-    background-position: 500px 0;
-  }
-}
+   100% {
+     background-position: 500px 0;
+   }
+ }
 
  @keyframes mars_anim {
    0% {
@@ -1231,53 +1549,95 @@ font-size:20px;/*ajout sonya changement size*/
    background: radial-gradient(circle at 100px 100px, #fff, #000);
  }
 
- .anneaux_coup{
+ .anneaux_coup {
    z-index: 5000;
-   left:91px;
-    top:73px;
-  width:1670px;
-  position: absolute!important;
-/* a black shadow from left and white from right */
-/*box-shadow: inset 16px 0 40px 3px rgba(0,0,0,0.9),
+   left: 126px;
+   top: 73px;
+   width: 1670px;
+   position: absolute !important;
+   /* a black shadow from left and white from right */
+   /*box-shadow: inset 16px 0 40px 3px rgba(0,0,0,0.9),
   inset -3px 0 5px 2px rgba(255,255,255,0.16);*/
-  background-size: 100px;
-  margin: 80px auto;
-  position: relative;
-  /*move,*/
-  /*augmentation vitesse rotation*/
-  animation-iteration-count: infinite,infinite,infinite;
-  animation-timing-function: ease-in-out,linear,linear;
-  }
-  @keyframes move {
-  0%   { left: 200px;  }  
-  70%  { left: 200px; }
-  100% { left: 200px;  }
-  }
-  @keyframes scale {
-  0%  { transform: scale(0.6);   }
-  32% { transform: scale(0.1); animation-timing-function:  ease-in; }
-  70% { transform: scale(0.1); animation-timing-function:  ease-in;  }
-  75% { transform: scale(1);  animation-timing-function:  ease-in-out; }
-  86% { transform: scale(1);  }  
-  98% { transform: scale(1); }
-  100%{ transform: scale(1); }
-  }
-  @keyframes rotate {
-  0% { background-position: 0px; }
-  100% { background-position: 190px; }
-  }
-  @keyframes saturne_anim {
-    0% {
-      background-position:0 0;
-    }
-    100% {
-      background-position: 100px 0;
-    }
-  }
-.anneaux{
-    width:95%;
-    height: 60%;
-}
+   background-size: 100px;
+   margin: 80px auto;
+   position: relative;
+   /*move,*/
+   /*augmentation vitesse rotation*/
+   animation-iteration-count: infinite, infinite, infinite;
+   animation-timing-function: ease-in-out, linear, linear;
+ }
+
+ @keyframes move {
+   0% {
+     left: 200px;
+   }
+
+   70% {
+     left: 200px;
+   }
+
+   100% {
+     left: 200px;
+   }
+ }
+
+ @keyframes scale {
+   0% {
+     transform: scale(0.6);
+   }
+
+   32% {
+     transform: scale(0.1);
+     animation-timing-function: ease-in;
+   }
+
+   70% {
+     transform: scale(0.1);
+     animation-timing-function: ease-in;
+   }
+
+   75% {
+     transform: scale(1);
+     animation-timing-function: ease-in-out;
+   }
+
+   86% {
+     transform: scale(1);
+   }
+
+   98% {
+     transform: scale(1);
+   }
+
+   100% {
+     transform: scale(1);
+   }
+ }
+
+ @keyframes rotate {
+   0% {
+     background-position: 0px;
+   }
+
+   100% {
+     background-position: 190px;
+   }
+ }
+
+ @keyframes saturne_anim {
+   0% {
+     background-position: 0 0;
+   }
+
+   100% {
+     background-position: 100px 0;
+   }
+ }
+
+ .anneaux {
+   width: 95%;
+   height: 60%;
+ }
 
  #uranus {
    margin: 0 auto;
@@ -1359,72 +1719,72 @@ font-size:20px;/*ajout sonya changement size*/
 
 
  #neptune {
-  /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
-  vertical-align: middle;
-  margin: 0 auto;
-  /* position: absolute;
+   /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+   vertical-align: middle;
+   margin: 0 auto;
+   /* position: absolute;
  top: 1565px;
  left: 715px; */
 
 
-  /* [2] Set-up the dimensions and spacing */
-  /* width: 300px;*/
-  width: 400px;
-  height: 400px;
+   /* [2] Set-up the dimensions and spacing */
+   /* width: 300px;*/
+   width: 400px;
+   height: 400px;
 
 
-  /* [3] Prepare the animation effects */
-  transition: transform 200ms linear;
-  animation: venus_anim 20s linear infinite;
-  /* This is going to be defined in the next step */
+   /* [3] Prepare the animation effects */
+   transition: transform 200ms linear;
+   animation: venus_anim 20s linear infinite;
+   /* This is going to be defined in the next step */
 
-  /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
-  color: #000;
-  border-radius: 50%;
-  background: url(image/texture/2k_neptune.jpg);
-  background-size: 800px;
-  box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
+   /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+   color: #000;
+   border-radius: 50%;
+   background: url(image/texture/2k_neptune.jpg);
+   background-size: 800px;
+   box-shadow: inset 15px 0 40px 0px rgba(0, 0, 0, 1);
 
-  /* [5] Position things in a 3d space */
-  transform-style: preserve-3d;
-}
+   /* [5] Position things in a 3d space */
+   transform-style: preserve-3d;
+ }
 
-#neptune::after {
-  /* [1] Break the flow to show this as an overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
+ #neptune::after {
+   /* [1] Break the flow to show this as an overlay */
+   position: absolute;
+   top: 0;
+   left: 0;
 
-  /* [2] Make it take all the space available in the box (ahem... globe!) */
-  width: 100%;
-  height: 100%;
+   /* [2] Make it take all the space available in the box (ahem... globe!) */
+   width: 100%;
+   height: 100%;
 
-  /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
-  content: '';
+   /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+   content: '';
 
-  /* [4] Give it some shape and shadow */
-  border-radius: 50%;
-  box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
-}
+   /* [4] Give it some shape and shadow */
+   border-radius: 50%;
+   box-shadow: -60px 10px 80px 20px rgba(0, 0, 0, .9) inset;
+ }
 
-#neptune::before {
-  /* [1] Again, break the flow to show this as an overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
+ #neptune::before {
+   /* [1] Again, break the flow to show this as an overlay */
+   position: absolute;
+   top: 0;
+   left: 0;
 
-  /* [2] Again, give it all the available space */
-  width: 100%;
-  height: 100%;
+   /* [2] Again, give it all the available space */
+   width: 100%;
+   height: 100%;
 
-  /* [3] Duh. */
-  content: '';
+   /* [3] Duh. */
+   content: '';
 
-  /* [4] Add some shape and overlay effect to it */
-  opacity: .2;
-  border-radius: 50%;
-  background: radial-gradient(circle at 100px 100px, #fff, #000);
-}
+   /* [4] Add some shape and overlay effect to it */
+   opacity: .2;
+   border-radius: 50%;
+   background: radial-gradient(circle at 100px 100px, #fff, #000);
+ }
 
  @keyframes neptune_anim {
    0% {

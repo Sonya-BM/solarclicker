@@ -23,15 +23,47 @@
         <p id="nv_aff">I &nbsp</p>
       </h2>
     </div>
-    <div>
-      <!-- <a href="http://www.adresse-de-votre-choix.com/" class="bouton1">Bouton 1</a> -->
-       <input class="block" type="button" value="PLAY">
+    <div class="galaxie">
+      <div class="planete soleil">
+        <div class="planete-info">Soleil</div>
+      </div>
+      <div class="planete mercure">
+        <div class="planete-info">Mercure</div>
+      </div>
+      <div class="planete venus">
+        <div class="planete-info">Venus</div>
+      </div>
+      <div class="planete terre">
+        <div class="planete-info">Terre</div>
+      </div>
+      <div class="planete mars">
+        <div class="planete-info">Mars</div>
+      </div>
+      <div class="planete jupiter">
+        <div class="planete-info">Jupiter</div>
+      </div>
+      <div class="planete saturne">
+        <div class="planete-info">Saturne</div>
+        <div class="saturne-bas"></div>
+        <div class="saturne-an"></div>
+        <div class="saturne-haut"></div>
+      </div>
+      <div class="planete uranus">
+        <div class="planete-info">Uranus</div>
+      </div>
+      <div class="planete neptune">
+        <div class="planete-info">Neptune</div>
+      </div>
+      <div class="planete pluton">
+        <div class="planete-info">Pluton</div>
+      </div>
     </div>
-    <!-- <div class="block"></block> -->
+    <div class="btn-wrapper">
+      <button type="button" class="btn" onclick="lancerJeu()">START</button>
+  </div>
+  <canvas id="canvas"></canvas>
+
   </section>
-
-   
-
 
   <!-- SECTION TERRE -->
   <section class="jeu" id="boite_terre">
@@ -110,7 +142,7 @@
       <button type="button" class="style_bouton" id="auto_click" onclick="autoClick()">
         <p id="nom_ac">Injecter propulsion</p>
         <div id="nombre_actif">Actif: 0</div>
-        <div class="align" id="prix_auto_click">Prix: 20 km/h</div>
+        <div class="align" id="prix_auto_click">Prix: 40 km/h</div>
         <div class="align" id="prix_auto_click_suivant"></div>
       </button>
 
