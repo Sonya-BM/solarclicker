@@ -95,7 +95,7 @@
   <!--début nouv ajout-->
   <section class="ui">
 
-    <form action="index.html">
+    <form action="index.html" id="ui">
       <div id="vitesse">0 km/h
       </div>
 
@@ -113,23 +113,26 @@
         <div class="align" id="prix_multi_suivant"></div>
       </button>
 
-      <button type="button" class="style_bouton" id="prochain_niveau" onclick="planeteSuivante()">
-        <p id="nom_planete">Venus:</p>
-        <p id="prix_planete">1250 km/h requis</p>
-      </button>
-
+      <button type="button" class="style_bouton" id="prochain_niveau" onclick="planeteSuivante()"><p id="nom_planete">Venus:</p> <p id="prix_planete">1250 km/h requis</p></button>
+      <div class="container">
+        <div class="red flame"></div>
+        <div class="orange flame"></div>
+        <div class="yellow flame"></div>
+        <div class="white flame"></div>
+        <div class="blue circle"></div>
+        <div class="fire circle"></div>
+      </div>
 
       <input type="button" id="fusee" onclick="vitess()">
+
 
     </form>
   </section>
 
   <div id="aff_emballage">
-    <div id="fond_affichage"></div>
-    <div id="affichage">
-      <p id="ecrito_a">La vitesse de libération n'est pas atteinte !</p>
-    </div>
-  </div>
+  <div id="fond_affichage"></div>
+  <div id="affichage"><p id="ecrito_a">La vitesse de libération n'est pas atteinte !</p></div>
+</div>
 
   <div class="ancrage">
 

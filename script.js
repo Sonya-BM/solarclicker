@@ -1,4 +1,4 @@
-var speed = 1000000000;
+var speed = 0;
 var prixAutoClick = 20;
 var prixMulti = 100;
 var cpt = 0;
@@ -15,9 +15,10 @@ const tempsAlert = 4000;
 var prixPlanete = 1;
 
 
+var prixPlanete = 1250;
 
 function vitess() {
-    speed = speed + increment;
+    speed = Math.round(speed + increment);
     document.getElementById('vitesse').innerHTML = speed + 'km/h';
     console.log(speed);
 }
@@ -27,7 +28,7 @@ function autoClick() {
     if (speed >= prixAutoClick) {
         cptAutoClick = cptAutoClick + 1;
         speed = speed - prixAutoClick;
-        prixAutoClick = prixAutoClick * 2;
+        prixAutoClick = Math.round(prixAutoClick * 2);
 
         document.getElementById('nombre_actif').innerHTML = 'Actif: ' + cptAutoClick;
         document.getElementById('vitesse').innerHTML = speed + 'km/h';
@@ -51,9 +52,9 @@ function multipli() {
 
     if (speed >= prixMulti) {
         cptMultipli = cptMultipli + 1;
-        speed = speed - prixMulti;
-        prixMulti = prixMulti * 2;
-        increment = increment * 1.5;
+        speed = Math.round(speed - prixMulti);
+        prixMulti = Math.round(prixMulti * 2);
+        increment = Math.round(increment * 1.5);
         console.log(increment);
         document.getElementById('vitesse').innerHTML = speed + 'km/h';
         document.getElementById('nombre_multi_actif').innerHTML = 'Actif: ' + cptMultipli;
