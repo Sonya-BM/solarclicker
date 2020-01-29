@@ -11,10 +11,10 @@
    text-align: center;
    font-size: 68px;
    font-weight: 100;
-   color: white;
+   /* color: white; */
    line-height: 72px;
-   text-shadow:0 0 2px #00E92C,0 0 30px #00E92C,0px 0px 5px #00E92C, 0 0 150px #00E92C;color:#00e92c;
- 
+   text-shadow:0 0 2px #00e92c,0 0 30px #00e92c,0px 0px 5px #00e92c, 0 0 150px #00e92c;color:#00e92c;
+
  }
 
  h2 {
@@ -69,7 +69,8 @@
   color:red;
 }
 
- p {
+ 
+p {
   font-weight:bold; /*ajout Sonya booster de vélocité*/
   display: inline-block;
   margin-top: 25px;
@@ -165,7 +166,6 @@
   width:300px;/*ajout sonya*/ 
  display: inline-block;
 }
-
  #auto_click {
   top: 350px;/*ajout sonya position bouton*/
   left: 1445px; /*décaler bouton*/
@@ -173,29 +173,23 @@
   height:150px;/*ajout sonya*/
   width:300px;/*ajout sonya 40px*/
  }
-
  #auto_click p{
   font-weight:bold;
   margin-top:25px;/*ajout sonya texte prix: 20km*/
   padding-left: 0px;/*titre propulsion*/
   /*margin: 10px 0 0 0;*/
  }
-
  #nombre_actif{
   font-size: 20px; /*sonya ajout 40px*/
   width:300px;/*sonya ajout width*/
- 
  }
-
 #prix_auto_click, #prix_auto_click_suivant{
   font-size: 20px; /*sonya ajout prix=20km/h20px*/
   padding-left:0px;
   height:150px;
- 
   width:300px;/*ajout sonya*/
   /*margin-top:-200px;/*ajout sonya remonte prix 20km/h*/
  }
-
  #multiplicateur {
   height:150px;
   width:300px;/*sonya change 300px*/
@@ -207,6 +201,7 @@ font-size:20px;/*ajout sonya changement size*/
 
  }
 
+ 
  #prochain_niveau {
   font-weight:bold;/*km/h requis*/
   height:150px;
@@ -346,6 +341,98 @@ clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
   }
 }
 
+.container{
+  /* margin:0px auto; */
+  width: 60px;
+  height: 60px;
+  top: 673px;
+  left: 923px;
+  position: fixed;
+  /* transform-origin:center bottom; */
+  animation-name: flicker;
+  animation-duration:320ms;
+  animation-delay:200ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.flame{
+  /* bottom:0; */
+  position:absolute;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  transform:rotate(136deg) scale(1.5,1.5);
+}
+
+.yellow{
+  left:15px; 
+  width: 30px;
+  height: 30px;
+  background:gold;
+  box-shadow: 0px 0px 9px 4px gold;
+}
+
+.orange{
+  left:10px; 
+  width: 40px;
+  height: 50px;
+  background:orange;
+  box-shadow: 0px 0px 9px 4px orange;
+}
+
+.red{
+  left:5px;
+  width: 50px;
+  height: 50px;
+  background:OrangeRed;
+  box-shadow: 0px 0px 5px 4px OrangeRed;
+}
+
+.white{
+  left:15px; 
+  bottom:5px;
+  width: 30px;
+  height: 30px;
+  background:white;
+  box-shadow: 0px 0px 9px 4px white;
+  
+}
+
+.circle{
+  border-radius: 90%;
+  position:absolute;  
+}
+
+/* .blue{
+  width: 10px;
+  height: 10px;
+  left:25px;
+  bottom:-15px; 
+  background: SlateBlue;
+  box-shadow: 0px 0px 15px 10px SlateBlue;
+} */
+
+.fire{
+  width: 40px;
+  height: 40px;
+  left:10px;
+  bottom:40px;  
+  background:#ED7F10 ;
+  box-shadow: 0px 0px 15px 10px #ED7F10;
+
+}
+
+@keyframes flicker{
+  0%   {transform: rotate(-1deg);}
+  20%  {transform: rotate(1deg);}
+  40%  {transform: rotate(-1deg);}
+  60%  {transform: rotate(1deg) scaleY(1.04);}
+  80%  {transform: rotate(-2deg) scaleY(0.92);}
+  100% {transform: rotate(1deg);}
+}
+
  /* -----------PLANETES------------------ */
 
  .jeu {
@@ -390,6 +477,7 @@ clip-path: polygon(0 0, 85% 3%, 100% 60%, 100% 100%, 15% 100%, 0 40%);
    /* [4] Give it some shape and shadow */
    border-radius: 50%;
 
+ 
  }
 
 
