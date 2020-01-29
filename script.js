@@ -40,6 +40,7 @@ function autoClick() {
     //AFFICHE LE MESSAGE DE REFUS:
     else {
         document.getElementById('aff_emballage').style.display = 'inherit';
+        document.getElementById('ecrito_a').innerHTML = 'La propulsion n\'ai pas à sa puissance maximale. Cliquez plus !';
         setInterval(effacerAlert, tempsAlert)
     }
 }
@@ -59,6 +60,11 @@ function multipli() {
         document.getElementById('vitesse').innerHTML = speed + 'km/h';
         document.getElementById('nombre_multi_actif').innerHTML = 'Actif: ' + cptMultipli;
         document.getElementById('prix_multi_suivant').innerHTML = 'Prochain : ' + prixMulti + 'km/h';
+    }
+    else {
+        document.getElementById('aff_emballage').style.display = 'inherit';
+        document.getElementById('ecrito_a').innerHTML = 'Nous manquons de vitesse pour activer ce système, cliquez plus ! ';
+        setInterval(effacerAlert, tempsAlert)
     }
 }
 
@@ -170,5 +176,11 @@ function planeteSuivante() {
         document.getElementById('vitesse').innerHTML = speed + 'km/h';
         document.getElementById('nom_planete').innerHTML = 'Venus:';
         document.getElementById('nv_aff').innerHTML = 'IX';
+    }
+
+    else {
+        document.getElementById('aff_emballage').style.display = 'inherit';
+        document.getElementById('ecrito_a').innerHTML = 'La vitesse de libération n\'est pas atteinte ! Cliquez plus !';
+        setInterval(effacerAlert, tempsAlert)
     }
 }

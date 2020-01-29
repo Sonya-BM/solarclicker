@@ -297,11 +297,11 @@ box-shadow: 10px 10px 0 #FFFFFF;
    height: 100px;
 
    position: fixed;
-   top: 200px;
+   top: 255px;
    left: 735px;
    ;
 
-   color: white;
+   color: rgb(255, 255, 255);
    z-index: 50000;
 
    background-color: rgb(160, 0, 0);
@@ -317,7 +317,7 @@ box-shadow: 10px 10px 0 #FFFFFF;
    height: 100px;
 
    position: fixed;
-   top: 195px;
+   top: 250px;
    left: 755px;
    /* 736px */
 
@@ -337,33 +337,33 @@ box-shadow: 10px 10px 0 #FFFFFF;
 
  @keyframes affich_slide {
    from {
-     top: 195px;
+     top: 250px;
      left: 755px
    }
 
    17% {
-     top: 200px;
+     top: 255px;
      left: 755px
    }
 
    35% {
-     top: 200px;
+     top: 255px;
      left: 736px;
    }
 
    65% {
-     top: 200px;
+     top: 255px;
      left: 736px;
    }
 
    83% {
 
-     top: 200px;
+     top: 255px;
      left: 755px
    }
 
    to {
-     top: 195px;
+     top: 250px;
      left: 755px;
    }
  }
