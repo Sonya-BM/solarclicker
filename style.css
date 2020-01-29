@@ -220,51 +220,52 @@ font-size:20px;/*ajout sonya changement size*/
 transition: 0.5s;
 box-shadow: 10px 10px 0 #FFFFFF;
 }
-/* a.bouton1 {
-  padding: 10px 30px; 
-  background: blue; 
-  color: white; 
-  }
-  a.bouton1:hover {
-  background: red; 
-  } */
-  .block {
-    position: relative;
-    margin: 300px auto 0;
-    width: 500px;
-    height: 250px;
-    background: linear-gradient(0deg, #000, #272727);
-  }
-  
-  .block:before, .block:after {
-    content: '';
-    position: absolute;
-    left: -2px;
-    top: -2px;
-    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
-      #0000ff, #00ff00,#ffff00, #ff0000);
-    background-size: 400%;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    z-index: -1;
-    animation: steam 20s linear infinite;
-  }
-  
-  @keyframes steam {
-    0% {
-      background-position: 0 0;
+
+
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300';
+
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+    box-sizing: border-box;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-wrapper{
+    position: fixed;
+    top: calc(50% - 22px);
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.btn{
+    box-shadow: none;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    background-color: #D30202;
+    height: 95px;
+    padding: 0 30px;
+    font-size: 50px;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .4s;
+    transition-timing-function: cubic-bezier(.2, 3, .4, 1);
+    user-select: none;
+    
+    &:hover{
+        transform: scale(1.1, 1.1);
     }
-    50% {
-      background-position: 400% 0;
+    
+    &:active{
+        transform: scale(1.05, 1.05);
     }
-    100% {
-      background-position: 0 0;
-    }
-  }
-  
-  .block:after {
-    filter: blur(50px);
-  }
+}
+
+
  #vitesse {
    padding-top: 25px;
    text-align: center;
