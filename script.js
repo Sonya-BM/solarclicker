@@ -1,4 +1,4 @@
-var speed = 0;
+var speed = 1000000;
 var prixAutoClick = 20;
 var prixMulti = 100;
 var cpt = 0;
@@ -12,8 +12,9 @@ var niveauRomain = 0;
 
 const tempsAlert = 4000;
 
-var prixPlanete = 1;
+tableAC = ['Booster à ergol solide','Propulseur chimique','TurboPompe à ergol liquide','Rayon Status','Propulseur ionique', 'Propulseur Nucléaire','Voile Solaire','Propulseur Orion','Moteur pantone'];
 
+tableMulti = ['Radiateur latérales','Capteur d\'hydrogène','Générateur de Gravitons','Ordinateur Quantique','Fuselage Psycho Connecté','Résèrve de Terredo','Altérateur du champs gravitationnel'];
 
 var prixPlanete = 1250;
 
@@ -30,6 +31,7 @@ function autoClick() {
         speed = speed - prixAutoClick;
         prixAutoClick = Math.round(prixAutoClick * 2);
 
+        document.getElementById('nom_ac').innerHTML = tableAC[Math.floor(Math.random()*9)];
         document.getElementById('nombre_actif').innerHTML = 'Actif: ' + cptAutoClick;
         document.getElementById('vitesse').innerHTML = speed + 'km/h';
         document.getElementById('prix_auto_click').innerHTML = 'Actuel: ' + prixAutoClick + 'km/h';
@@ -60,6 +62,7 @@ function multipli() {
         document.getElementById('vitesse').innerHTML = speed + 'km/h';
         document.getElementById('nombre_multi_actif').innerHTML = 'Actif: ' + cptMultipli;
         document.getElementById('prix_multi_suivant').innerHTML = 'Prochain : ' + prixMulti + 'km/h';
+        document.getElementById('nom_multi').innerHTML = tableMulti[Math.floor(Math.random()*7)];
     }
     else {
         document.getElementById('aff_emballage').style.display = 'inherit';
